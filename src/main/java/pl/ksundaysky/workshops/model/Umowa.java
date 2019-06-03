@@ -9,12 +9,16 @@ import javax.persistence.*;
 public class Umowa {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
     private String nazwa;
 
     public Umowa() {
+    }
+
+    public Umowa(String nazwa) {
+        this.nazwa = nazwa;
     }
 
     public Umowa(String nazwa, Person person) {

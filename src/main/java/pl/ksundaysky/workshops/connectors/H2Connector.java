@@ -14,19 +14,19 @@ import java.util.Properties;
 /**
  * @author krzysztof.niedzielski
  */
-public class MysqlConnector implements Connector {
-
+public class H2Connector implements Connector {
     private static SessionFactory sessionFactory;
 
-    public  SessionFactory getSessionFactory() {
+
+    private  SessionFactory getSessionFactory(){
         try {
             Configuration configuration = new Configuration();
             Properties settings = new Properties();
-            settings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
-            settings.put(Environment.URL, "jdbc:mysql://localhost:3306/db1?serverTimezone=UTC");
-            settings.put(Environment.USER, "username");
-            settings.put(Environment.PASS, "password");
-            settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL8Dialect");
+            settings.put(Environment.DRIVER, "org.h2.Driver");
+            settings.put(Environment.URL, "jdbc:h2:tcp://localhost/~/test");
+            settings.put(Environment.USER, "sa");
+            settings.put(Environment.PASS, "");
+            settings.put(Environment.DIALECT, "org.hibernate.dialect.H2Dialect");
             settings.put(Environment.SHOW_SQL, "true");
             settings.put(Environment.HBM2DDL_AUTO, "create-drop");
             settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
@@ -42,8 +42,6 @@ public class MysqlConnector implements Connector {
 
         return sessionFactory;
     }
-
-
     @Override
     public Session getSession() {
         return this.getSessionFactory().getCurrentSession();
