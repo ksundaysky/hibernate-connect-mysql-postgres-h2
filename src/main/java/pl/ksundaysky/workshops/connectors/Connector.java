@@ -49,5 +49,4 @@ public abstract class Connector implements ISession {
     }
 
     abstract Properties loadConnectorSettings();
-
 }

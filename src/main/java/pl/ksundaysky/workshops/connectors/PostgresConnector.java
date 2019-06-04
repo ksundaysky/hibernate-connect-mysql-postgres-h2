@@ -1,13 +1,6 @@
 package pl.ksundaysky.workshops.connectors;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
-import org.hibernate.service.ServiceRegistry;
-import pl.ksundaysky.workshops.model.Person;
-import pl.ksundaysky.workshops.model.Umowa;
 
 import java.util.Properties;
 
