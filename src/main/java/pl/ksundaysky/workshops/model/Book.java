@@ -26,6 +26,9 @@ public class Book {
     )
     private Set<Author> authors = new HashSet<>();
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy="book")
+    private Set<BookstoreBook> bookstoreBooks = new HashSet<>();
+
     @Enumerated(EnumType.STRING)
     private Genre genre;
 
@@ -65,6 +68,14 @@ public class Book {
 
     public void setGenre(Genre genre) {
         this.genre = genre;
+    }
+
+    public Set<BookstoreBook> getBookstoreBooks() {
+        return bookstoreBooks;
+    }
+
+    public void setBookstoreBooks(Set<BookstoreBook> bookstoreBooks) {
+        this.bookstoreBooks = bookstoreBooks;
     }
 
     @Override

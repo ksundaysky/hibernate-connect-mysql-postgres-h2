@@ -1,33 +1,51 @@
-//package pl.ksundaysky.workshops.model;
-//
-//import javax.persistence.*;
-//
-///**
-// * @author Bartosz Kupajski
-// */
-//@Entity
-//public class Bookstore {
-//
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Long id;
-//
-//    @Column(name = "name", nullable = false)
-//    private String nameOfBookstore;
-//
-//    public Bookstore(String nameOfBookstore) {
-//        this.nameOfBookstore = nameOfBookstore;
-//    }
-//
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public String getNameOfBookstore() {
-//        return nameOfBookstore;
-//    }
-//
-//    public void setNameOfBookstore(String nameOfBookstore) {
-//        this.nameOfBookstore = nameOfBookstore;
-//    }
-//}
+package pl.ksundaysky.workshops.model;
+
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * @author Agnieszka Trzewik
+ */
+@Entity
+public class Bookstore {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    @Column(name = "id", updatable = false, nullable = false)
+    private Long id;
+
+    @Column(name = "name", updatable = false, nullable = false)
+    private String name;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy="bookstore")
+    private Set<BookstoreBook> bookstoreBooks = new HashSet<BookstoreBook>();
+
+    public Bookstore(String name) {
+        this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<BookstoreBook> getBookstoreBooks() {
+        return bookstoreBooks;
+    }
+
+    public void setBookstoreBooks(Set<BookstoreBook> bookstoreBooks) {
+        this.bookstoreBooks = bookstoreBooks;
+    }
+}
