@@ -39,8 +39,6 @@ public abstract class Connector implements ISession {
     }
 
     private void addEntites(Configuration configuration) {
-        configuration.addAnnotatedClass(Person.class);
-        configuration.addAnnotatedClass(Umowa.class);
         configuration.addAnnotatedClass(Book.class);
         configuration.addAnnotatedClass(Author.class);
         configuration.addAnnotatedClass(Bookstore.class);
