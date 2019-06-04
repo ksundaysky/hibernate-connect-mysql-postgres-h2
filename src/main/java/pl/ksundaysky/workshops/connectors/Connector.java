@@ -7,6 +7,6 @@ import org.hibernate.Session;
  */
 public interface Connector {
 
-   Session getSession();
+   Session getSession() throws Exception;
 
 }
