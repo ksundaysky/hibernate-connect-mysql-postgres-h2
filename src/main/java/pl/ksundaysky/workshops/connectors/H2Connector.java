@@ -8,8 +8,6 @@ import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 import pl.ksundaysky.workshops.model.Author;
 import pl.ksundaysky.workshops.model.Book;
-import pl.ksundaysky.workshops.model.Person;
-import pl.ksundaysky.workshops.model.Umowa;
 
 import java.util.Properties;
 
@@ -30,14 +28,9 @@ public class H2Connector implements Connector {
                 settings.put(Environment.USER, "sa");
                 settings.put(Environment.PASS, "");
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.H2Dialect");
-                settings.put(Environment.SHOW_SQL, "true");
-                settings.put(Environment.FORMAT_SQL, "true");
-                settings.put(Environment.GENERATE_STATISTICS, "true");
                 settings.put(Environment.HBM2DDL_AUTO, "create-drop");
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
                 configuration.setProperties(settings);
-                configuration.addAnnotatedClass(Person.class);
-                configuration.addAnnotatedClass(Umowa.class);
                 configuration.addAnnotatedClass(Book.class);
                 configuration.addAnnotatedClass(Author.class);
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
@@ -45,8 +38,6 @@ public class H2Connector implements Connector {
                 sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 
         }
-        System.out.println("lol jestem tu");
-
         return sessionFactory;
     }
     @Override

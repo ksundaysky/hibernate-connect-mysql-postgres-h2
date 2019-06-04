@@ -6,8 +6,8 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
-import pl.ksundaysky.workshops.model.Person;
-import pl.ksundaysky.workshops.model.Umowa;
+import pl.ksundaysky.workshops.model.Author;
+import pl.ksundaysky.workshops.model.Book;
 
 import java.util.Properties;
 
@@ -27,12 +27,11 @@ public class MysqlConnector implements Connector {
             settings.put(Environment.USER, "username");
             settings.put(Environment.PASS, "password");
             settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL8Dialect");
-            settings.put(Environment.SHOW_SQL, "true");
             settings.put(Environment.HBM2DDL_AUTO, "create-drop");
             settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
             configuration.setProperties(settings);
-            configuration.addAnnotatedClass(Person.class);
-            configuration.addAnnotatedClass(Umowa.class);
+            configuration.addAnnotatedClass(Book.class);
+            configuration.addAnnotatedClass(Author.class);
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();
             sessionFactory = configuration.buildSessionFactory(serviceRegistry);
