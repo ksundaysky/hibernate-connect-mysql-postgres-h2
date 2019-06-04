@@ -1,7 +1,6 @@
-package pl.ksundaysky.workshops;
+package ja.workshop.hibernate;
 
-import pl.ksundaysky.workshops.connectors.Connector;
-import pl.ksundaysky.workshops.connectors.H2Connector;
+import ja.workshop.hibernate.connectors.H2Connector;
 
 /**
  * @author krzysztof.niedzielski

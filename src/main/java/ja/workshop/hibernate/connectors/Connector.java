@@ -1,5 +1,9 @@
-package pl.ksundaysky.workshops.connectors;
+package ja.workshop.hibernate.connectors;
 
+import ja.workshop.hibernate.model.Author;
+import ja.workshop.hibernate.model.Book;
+import ja.workshop.hibernate.model.Bookstore;
+import ja.workshop.hibernate.model.BookstoreBook;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
