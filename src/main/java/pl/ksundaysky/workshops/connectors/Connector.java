@@ -5,10 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-import pl.ksundaysky.workshops.model.Author;
-import pl.ksundaysky.workshops.model.Book;
-import pl.ksundaysky.workshops.model.Person;
-import pl.ksundaysky.workshops.model.Umowa;
+import pl.ksundaysky.workshops.model.*;
 
 import java.util.Properties;
 
@@ -46,6 +43,8 @@ public abstract class Connector implements ISession {
         configuration.addAnnotatedClass(Umowa.class);
         configuration.addAnnotatedClass(Book.class);
         configuration.addAnnotatedClass(Author.class);
+        configuration.addAnnotatedClass(Bookstore.class);
+        configuration.addAnnotatedClass(BookstoreBook.class);
     }
 
     abstract Properties loadConnectorSettings();
