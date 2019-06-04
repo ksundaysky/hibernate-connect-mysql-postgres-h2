@@ -1,21 +1,13 @@
 package pl.ksundaysky.workshops.connectors;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
-import org.hibernate.service.ServiceRegistry;
-import pl.ksundaysky.workshops.model.Person;
-import pl.ksundaysky.workshops.model.Umowa;
 
 import java.util.Properties;
 
 /**
  * @author krzysztof.niedzielski
  */
-public class MysqlConnector extends Connector {
-
+public class MysqlConnector extends SessionConnector {
     @Override
     Properties loadConnectorSettings() {
         Properties settings = new Properties();

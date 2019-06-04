@@ -1,23 +1,32 @@
 package pl.ksundaysky.workshops;
 
-import pl.ksundaysky.workshops.connectors.Connector;
-import pl.ksundaysky.workshops.connectors.ConnectorManager;
-import pl.ksundaysky.workshops.connectors.H2Connector;
+import pl.ksundaysky.workshops.connectors.*;
 import pl.ksundaysky.workshops.model.*;
 
 import java.util.*;
 
 /**
- * @author krzysztof.niedzielski
+ * @author Kamil Rojek
  */
 public class App {
-    public static void main(String[] args) throws Exception {
-        connect();
+    public static void main(String[] args) {
+        ConnectorManager connectorManager = connect(new H2Connector());
+
+        Author author = new Author("Aga", "Tuwim");
+        Set<Author> authors = Set.of(new Author("Jan", "Brzechwa"));
+        Book book = new Book("asd", authors, Genre.CLASSIC);
+        connectorManager.addRecords(author);
+        connectorManager.addRecords(authors);
+        connectorManager.addRecords(book);
+
+        try {
+            connectorManager.commitAndClose();
+        } catch (SessionInitializationException e) {
+            e.getMessage();
+        }
     }
 
-    static void connect() {
-        ConnectorManager<Connector> connectorManager = new ConnectorManager<>(new H2Connector());
-        Set<Author> authors = Set.of(new Author("Jan", "Brzechwa"));
-        connectorManager.addRecords(authors);
+    private static ConnectorManager connect(SessionConnector connector) {
+        return ConnectorManager.connect(connector);
     }
 }
