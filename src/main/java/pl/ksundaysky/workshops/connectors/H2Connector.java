@@ -31,6 +31,8 @@ public class H2Connector implements Connector {
                 settings.put(Environment.PASS, "");
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.H2Dialect");
                 settings.put(Environment.SHOW_SQL, "true");
+                settings.put(Environment.FORMAT_SQL, "true");
+                settings.put(Environment.GENERATE_STATISTICS, "true");
                 settings.put(Environment.HBM2DDL_AUTO, "create-drop");
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
                 configuration.setProperties(settings);
@@ -38,7 +40,6 @@ public class H2Connector implements Connector {
                 configuration.addAnnotatedClass(Umowa.class);
                 configuration.addAnnotatedClass(Book.class);
                 configuration.addAnnotatedClass(Author.class);
-//                configuration.addAnnotatedClass(Umowa.class);
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                         .applySettings(configuration.getProperties()).build();
                 sessionFactory = configuration.buildSessionFactory(serviceRegistry);
