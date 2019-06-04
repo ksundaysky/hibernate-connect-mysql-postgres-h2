@@ -25,7 +25,7 @@ public class ConnectorManager<T extends ISession> {
     }
 
     public static <T extends ISession> ConnectorManager connect(T connector) {
-        return new ConnectorManager(connector);
+        return new ConnectorManager<>(connector);
     }
 
     public ConnectorManager<T> addRecords(Collection<?> records) {
