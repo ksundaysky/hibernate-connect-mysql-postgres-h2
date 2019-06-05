@@ -1,10 +1,7 @@
 package ja.workshops.hibernate.parts.connectors;
 
-import org.hibernate.Session;
-
 /**
- * @author Kamil Rojek
+ * @author krzysztof.kramarz
  */
 public interface ISession {
-    Session getSession();
 }

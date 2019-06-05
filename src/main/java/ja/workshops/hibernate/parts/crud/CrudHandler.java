@@ -1,6 +1,6 @@
 package ja.workshops.hibernate.parts.crud;
 
-import ja.workshops.hibernate.parts.connectors.ConnectorManager;
+import ja.workshops.hibernate.parts.connectors.Session.SessionConnectorManager;
 import ja.workshops.hibernate.parts.connectors.SessionInitializationException;
 import org.hibernate.Session;
 
@@ -22,13 +22,13 @@ import java.util.List;
  */
 public class CrudHandler {
     private ICrudMethods crudMethods;
-    private ConnectorManager<?> connectorManager;
+    private SessionConnectorManager<?> sessionConnectorManager;
     private List<Object> recordsToAdd;
     private List<Object> recordsToUpdate;
 
-    private CrudHandler(ICrudMethods crudMethods, ConnectorManager<?> connectorManager) {
+    private CrudHandler(ICrudMethods crudMethods, SessionConnectorManager<?> sessionConnectorManager) {
         this.crudMethods = crudMethods;
-        this.connectorManager = connectorManager;
+        this.sessionConnectorManager = sessionConnectorManager;
 
         recordsToAdd = new ArrayList<>();
         recordsToUpdate = new ArrayList<>();
@@ -38,11 +38,11 @@ public class CrudHandler {
      * Initializes new CrudHandler class.
      *
      * @param crudMethods      - API of basic crud methods (create, read, update, delete).
-     * @param connectorManager - manager of connection between java and database
+     * @param sessionConnectorManager - manager of connection between java and database
      * @return CrudHandler
      */
-    public static CrudHandler initializeCrudHandler(ICrudMethods crudMethods, ConnectorManager<?> connectorManager) {
-        return new CrudHandler(crudMethods, connectorManager);
+    public static CrudHandler initializeCrudHandler(ICrudMethods crudMethods, SessionConnectorManager<?> sessionConnectorManager) {
+        return new CrudHandler(crudMethods, sessionConnectorManager);
     }
 
     /**
@@ -104,7 +104,7 @@ public class CrudHandler {
      * @return - record as an object
      */
     public <T extends Serializable> Object readRecord(Class<?> clazz, T id) {
-        try (Session session = connectorManager.getSession()) {
+        try (Session session = sessionConnectorManager.getSession()) {
             crudMethods.initializeSession(session);
             return crudMethods.read(clazz, id);
         } catch (SessionInitializationException e) {
@@ -120,10 +120,10 @@ public class CrudHandler {
      * @param <R>    - type of record
      */
     public <R> void deleteRecord(R record) {
-        try (Session session = connectorManager.getSession()) {
+        try (Session session = sessionConnectorManager.getSession()) {
             crudMethods.initializeSession(session);
             crudMethods.delete(record);
-            connectorManager.commitAndClose();
+            sessionConnectorManager.commitAndClose();
         } catch (SessionInitializationException e) {
             e.printStackTrace();
         }
@@ -134,7 +134,7 @@ public class CrudHandler {
      */
     public void commitAndClose() {
         try {
-            connectorManager.commitAndClose(recordsToAdd, recordsToUpdate);
+            sessionConnectorManager.commitAndClose(recordsToAdd, recordsToUpdate);
         } catch (SessionInitializationException e) {
             e.printStackTrace();
         }

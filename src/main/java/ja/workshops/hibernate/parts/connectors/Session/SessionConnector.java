@@ -1,5 +1,6 @@
-package ja.workshops.hibernate.parts.connectors;
+package ja.workshops.hibernate.parts.connectors.Session;
 
+import ja.workshops.hibernate.parts.connectors.Session.ISessionConnector;
 import ja.workshops.hibernate.parts.model.Author;
 import ja.workshops.hibernate.parts.model.Book;
 import ja.workshops.hibernate.parts.model.Bookstore;
@@ -17,7 +18,7 @@ import java.util.Properties;
  *
  * @author Kamil Rojek
  */
-public abstract class SessionConnector implements ISession {
+public abstract class SessionConnector implements ISessionConnector {
     private SessionFactory sessionFactory;
 
     /**
