@@ -16,7 +16,7 @@ public class App {
         Set<Author> authors = Set.of(new Author("Jan", "Brzechwa"));
         Book book = new Book("asd", authors, Genre.CLASSIC);
         connectorManager.addRecords(author);
-        connectorManager.addRecords(authors);
+        connectorManager.addRecords(author);
         connectorManager.addRecords(book);
 
         try {
