@@ -1,28 +1,12 @@
-# Install and start database servers
+# Existence of hibernate collections.
 
-You should install 3 different databases:
-* MySQL
-* PostgreSQL
-* H2 (open in server mode)
-
-1. Download database server.
-2. Install.
-3. Configure username and password for your user.
-4. Create database and name it: DB
-5. Change in Connector classes {database}, {password}, {username}  
+1. Prepare H2 connection.
+2. Go to CollectionsTest class.
+3. Use prepared tests methods to prove, that a set of authors in the Book is a java.util.HashSet
+   and after persistence is an org.hibernate.collection.internal.PersistentSet (use Author and Book classes).
 
 ## Documentation 
 
 Checkout documentation:
 
-* [MySQL](https://dev.mysql.com/doc/refman/8.0/en/binary-installation.html)
-* [PostgreSQL](https://www.postgresql.org/docs/11/index.html)
-* [H2](https://www.h2database.com/html/installation.html)
-
-## Tips 
-
-If you install db for first time (or forget how to do it):
-
-* [MySQL](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04)
-* [PostgreSQL](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04)
-* [H2](https://www.h2database.com/html/installation.html)
+* [docs](https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/collections.html#collections-sorted)
