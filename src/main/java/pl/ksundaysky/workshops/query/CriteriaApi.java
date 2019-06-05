@@ -1,14 +1,11 @@
 package pl.ksundaysky.workshops.query;
 
 import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,11 +15,12 @@ public class CriteriaApi {
 
     /**
      * session.createriteria() is depracated from hibernate 5.2
+     *
      * @param session
      * @return
      */
 
-    public <T> List<T> listAll(Session session, Class T ){
+    public <T> List<T> listAll(Session session, Class T) {
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
 
         CriteriaQuery<T> criteriaQuery = criteriaBuilder.createQuery(T);

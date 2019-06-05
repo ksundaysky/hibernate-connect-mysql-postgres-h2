@@ -1,4 +1,4 @@
-package pl.ksundaysky.workshops.connectors;
+package pl.ksundaysky.workshops.connectors.Session;
 
 import org.hibernate.cfg.Environment;
 

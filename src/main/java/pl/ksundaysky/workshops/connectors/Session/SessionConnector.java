@@ -1,4 +1,4 @@
-package pl.ksundaysky.workshops.connectors;
+package pl.ksundaysky.workshops.connectors.Session;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -12,7 +12,7 @@ import java.util.Properties;
 /**
  * @author Kamil Rojek
  */
-public abstract class SessionConnector implements ISession {
+public abstract class SessionConnector implements ISessionConnector {
     private SessionFactory sessionFactory;
 
     @Override
