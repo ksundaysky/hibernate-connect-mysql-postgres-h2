@@ -34,14 +34,18 @@ public class CollectionsTest {
     }
 
     @Test
-    public void givenCollection_ThenReturnJavaHashSet(){
+    public void givenJavaHashSet_ThenReturnJavaHashSet(){
+
+        //Arrange
+
+        //Act
 
         //Assert
         assertEquals(book.getAuthors().getClass(), HashSet.class);
     }
 
     @Test
-    public void givenCollection_ThenReturnHibernatePersistentSet(){
+    public void givenJavaHashSet_ThenReturnHibernatePersistentSet(){
 
         //Arrange
         SessionConnector sessionConnector = new H2Connector();
