@@ -7,7 +7,7 @@ import java.util.Properties;
 /**
  * @author krzysztof.niedzielski
  */
-public class H2Connector extends Connector {
+public class H2Connector extends SessionConnector {
     @Override
     Properties loadConnectorSettings() {
         Properties settings = new Properties();
