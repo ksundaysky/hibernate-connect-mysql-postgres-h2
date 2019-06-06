@@ -42,7 +42,6 @@ public class CrudHandler {
         return this;
     }
 
-
     public CrudHandler updateRecord(Collection<?> records) {
         for (Object r : records) {
             updateRecord(r);

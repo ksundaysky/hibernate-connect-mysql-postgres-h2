@@ -4,7 +4,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.service.spi.ServiceException;
 import pl.ksundaysky.workshops.crud.CrudHandler;
-import pl.ksundaysky.workshops.crud.CrudMethods;
 import pl.ksundaysky.workshops.crud.ICrudMethods;
 
 import java.util.List;
