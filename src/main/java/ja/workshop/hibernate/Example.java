@@ -7,9 +7,14 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 /**
+ * This class shows hibernate object in each state.
+ * TODO: create new class and use basic methods to obtain the same lifecycle.
+ *
+ * !Lifecycle will be useful to task with collections
+ *
  * @author Ola Podorska
  */
-class App {
+class Example {
     public static void main(String[] args) {
         //starts connection and begin transaction
         Session session = new H2Connector().getSession();
