@@ -1,48 +1,31 @@
 package pl.ksundaysky.workshops;
-
-import org.hibernate.Session;
-import pl.ksundaysky.workshops.connectors.*;
-import pl.ksundaysky.workshops.crud.CrudHandler;
+import pl.ksundaysky.workshops.connectors.ConnectorManager;
+import pl.ksundaysky.workshops.connectors.H2Connector;
+import pl.ksundaysky.workshops.connectors.SessionConnector;
 import pl.ksundaysky.workshops.crud.CrudMethods;
-import pl.ksundaysky.workshops.model.*;
-
-import java.util.*;
-
+import pl.ksundaysky.workshops.model.Fighter;
+import pl.ksundaysky.workshops.model.Heros;
+import pl.ksundaysky.workshops.model.Sex;
+import java.util.Set;
 /**
  * @author Kamil Rojek
  */
 public class App {
-    public static void main(String[] args) {
-        Author author = new Author("Kamil", "R");
-        Set<Author> authors = Set.of(new Author("Jan", "Brzechwa"), new Author("OLA", "POD"));
-        Book book = new Book("BOOK", authors, Genre.CLASSIC);
-
-        Author authorModification = new Author("ZMIENIONE", "ZMIENIONE");
-        authorModification.setId(2L);
-
-        connect(new H2Connector())
+    public static void main(String[] args)
+    {
+        Fighter fighter = new Fighter();
+        fighter.setName("Żołnież");
+        fighter.setSex(Sex.MALE);
+        fighter.setEngergy(100);
+//        connect(new H2Connector())
+//                .openCrudSession(new CrudMethods())
+//                .addRecord(fighter)
+//                .commitAndClose();
+        Fighter record = (Fighter) connect(new H2Connector())
                 .openCrudSession(new CrudMethods())
-                .updateRecord(author)
-                .updateRecord(authors)
-                .updateRecord(book)
-                .commitAndClose();
-
-        Author authorKamil = (Author) connect(new H2Connector())
-                .openCrudSession(new CrudMethods())
-                .readRecord(Author.class, 2L);
-
-        authorKamil.setName("KamilSuper");
-
-        connect(new H2Connector())
-                .openCrudSession(new CrudMethods())
-                .updateRecord(authorKamil)
-                .commitAndClose();
-
-        connect(new H2Connector())
-                .openCrudSession(new CrudMethods())
-                .deleteRecord(authorKamil);
+                .readRecord(Fighter.class, 1L);
+        System.out.println(record.getName() + " " + record.getEngergy());
     }
-
     private static ConnectorManager connect(SessionConnector connector) {
         return ConnectorManager.connect(connector);
     }
