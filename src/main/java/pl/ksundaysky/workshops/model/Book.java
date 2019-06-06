@@ -32,6 +32,9 @@ public class Book {
     @Enumerated(EnumType.STRING)
     private Genre genre;
 
+    public Book() {
+
+    }
     public Book(String title, Set<Author> authors, Genre genre) {
         this.title = title;
         this.authors = authors;
