@@ -19,3 +19,5 @@ There are few methods to menage lifecycle of object.
 * persistent -> removed: `delete()`
 
 Go to Example class to see hibernate object lifecycle.
+
+![Lifecycle](https://www.baeldung.com/wp-content/uploads/2016/07/2016-07-11_13-38-11-1024x551.png)
