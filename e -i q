@@ -1,0 +1,19 @@
+* [33m64cbf7f[m [36mKrzysztof Kramarz[m generators [32m(Mon Jun 10 13:09:14 2019 +0200)[m [m[33m ([m[1;36mHEAD -> [m[1;32mgenerators[m[33m)[m[m [1;32m(2 seconds ago)
+* [33me3d85bd[m [36mKrzysztof Kramarz[m  initial [32m(Sun Jun 9 22:33:29 2019 +0200)[m [m[33m ([m[1;31morigin/generators[m[33m)[m[m [1;32m(15 hours ago)
+* [33m38c6c11[m [36mOla[m delete import [32m(Wed Jun 5 08:36:22 2019 +0200)[m [m[33m ([m[1;31morigin/basic[m[33m)[m[m [1;32m(5 days ago)
+* [33m866e58d[m [36mKrzysiek[m Update classes to create db connection and schema: [32m(Tue Jun 4 14:14:21 2019 +0200)[m [m[m [1;32m(6 days ago)
+* [33m7579c64[m [36mKrzysiek[m Initialize default template: [32m(Tue Jun 4 14:07:15 2019 +0200)[m [m[m [1;32m(6 days ago)
+* [33m94fe446[m [36mAgnieszka[m Add new classes to Connector [32m(Tue Jun 4 12:40:26 2019 +0200)[m [m[m [1;32m(6 days ago)
+*   [33mcd60927[m [36mAgnieszka[m Merge branch 'master' into modelExtension [32m(Tue Jun 4 12:34:39 2019 +0200)[m [m[m [1;32m(6 days ago)
+[32m|[m[33m\[m  
+* [33m|[m [33med67da8[m [36mAgnieszka[m Add model extension [32m(Tue Jun 4 12:33:08 2019 +0200)[m [m[m [1;32m(6 days ago)
+[33m|[m * [33m8dfc641[m [36mKamil Rojek[m Refactor tweaks [32m(Tue Jun 4 12:24:14 2019 +0200)[m [m[m [1;32m(6 days ago)
+[33m|[m * [33m32ef3f5[m [36mKamil Rojek[m Connectors refactor [32m(Tue Jun 4 12:22:04 2019 +0200)[m [m[m [1;32m(6 days ago)
+[33m|[m[33m/[m  
+* [33mc5b0067[m [36mKrzysiek[m Create README.md [32m(Tue Jun 4 10:06:39 2019 +0200)[m [m[m [1;32m(6 days ago)
+*   [33m0ca9788[m [36mKrzysiek[m Merge pull request #1 from ksundaysky/criteria-api [32m(Tue Jun 4 09:57:20 2019 +0200)[m [m[m [1;32m(6 days ago)
+[34m|[m[35m\[m  
+[34m|[m * [33m5812106[m [36mKrzysiek[m Many to many table join, criteria api simple get records [32m(Mon Jun 3 15:32:20 2019 +0200)[m [m[33m ([m[1;31morigin/criteria-api[m[33m, [m[1;32mcriteria-api[m[33m)[m[m [1;32m(7 days ago)
+[34m|[m[34m/[m  
+* [33ma42b66d[m [36mKrzysiek[m Postgre Mysql and h2 connected, added some test data [32m(Mon Jun 3 11:11:15 2019 +0200)[m [m[m [1;32m(7 days ago)
+* [33md38c2d4[m [36mKrzysiek[m Initial commit [32m(Thu May 30 14:47:25 2019 +0200)[m [m[m [1;32m(11 days ago)

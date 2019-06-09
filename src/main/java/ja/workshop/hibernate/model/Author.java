@@ -10,7 +10,8 @@ import java.util.List;
 public class Author {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "tabela_generator_wartosci")
+    @TableGenerator(name = "tabela_generator_wartosci", initialValue = 50, allocationSize = 100, pkColumnValue = "id_tabela_autor", pkColumnName = "tabele", valueColumnName = "wartosc_id")
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
