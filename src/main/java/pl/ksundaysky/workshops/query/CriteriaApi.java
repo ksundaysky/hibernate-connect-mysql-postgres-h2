@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * @author krzysztof.niedzielski
  */
-public class CriteriaApi {
+public class CriteriaApi implements IQuery {
 
     /**
      * session.createriteria() is depracated from hibernate 5.2

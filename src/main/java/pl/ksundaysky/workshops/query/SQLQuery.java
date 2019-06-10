@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * @author krzysztof.niedzielski
  */
-public class SQLQuery {
+public class SQLQuery implements  IQuery{
     public <T> List<T> listAll(Session session, Class T ){
         List<T> list = session.createSQLQuery("select name, surnname from Author").getResultList();
         return list;
