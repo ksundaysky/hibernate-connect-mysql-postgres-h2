@@ -39,10 +39,14 @@ public abstract class SessionConnector implements ISession {
     }
 
     private void addEntites(Configuration configuration) {
-        configuration.addAnnotatedClass(Book.class);
-        configuration.addAnnotatedClass(Author.class);
-        configuration.addAnnotatedClass(Bookstore.class);
-        configuration.addAnnotatedClass(BookstoreBook.class);
+        configuration.addAnnotatedClass(Champion.class);
+        configuration.addAnnotatedClass(Warrior.class);
+        configuration.addAnnotatedClass(Wizard.class);
+        configuration.addAnnotatedClass(Sex.class);
+        configuration.addAnnotatedClass(DarkKnight.class);
+        configuration.addAnnotatedClass(SoulMaster.class);
+        configuration.addAnnotatedClass(WizzarUltimate.class);
+        configuration.addAnnotatedClass(WarriorUltimates.class);
     }
 
     abstract Properties loadConnectorSettings();

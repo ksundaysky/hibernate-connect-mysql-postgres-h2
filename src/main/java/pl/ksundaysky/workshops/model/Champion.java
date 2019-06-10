@@ -6,8 +6,8 @@ import javax.persistence.*;
  * @author Kamil Rojek
  */
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public abstract class Heros {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Champion {
     @Id
     @GeneratedValue
     private long id;
@@ -15,6 +15,13 @@ public abstract class Heros {
     
     @Enumerated(EnumType.STRING)
     private Sex sex;
+
+    public Champion() { }
+
+    public Champion(String name, Sex sex) {
+        this.name = name;
+        this.sex = sex;
+    }
 
     public long getId() {
         return id;

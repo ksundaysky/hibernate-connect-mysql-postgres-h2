@@ -3,28 +3,31 @@ import pl.ksundaysky.workshops.connectors.ConnectorManager;
 import pl.ksundaysky.workshops.connectors.H2Connector;
 import pl.ksundaysky.workshops.connectors.SessionConnector;
 import pl.ksundaysky.workshops.crud.CrudMethods;
-import pl.ksundaysky.workshops.model.Fighter;
-import pl.ksundaysky.workshops.model.Heros;
-import pl.ksundaysky.workshops.model.Sex;
-import java.util.Set;
+import pl.ksundaysky.workshops.model.*;
+
 /**
  * @author Kamil Rojek
  */
 public class App {
     public static void main(String[] args)
     {
-        Fighter fighter = new Fighter();
-        fighter.setName("Żołnież");
-        fighter.setSex(Sex.MALE);
-        fighter.setEngergy(100);
-//        connect(new H2Connector())
-//                .openCrudSession(new CrudMethods())
-//                .addRecord(fighter)
-//                .commitAndClose();
-        Fighter record = (Fighter) connect(new H2Connector())
+        Warrior warrior = new Warrior("Wojownik", Sex.MALE, 100);
+        Wizard wizard = new Wizard("Czarodziejka", Sex.FEMALE, 100);
+        SoulMaster soulMaster = new SoulMaster("Soul Master", Sex.MALE, 100, WizzarUltimate.GHOSTS);
+        DarkKnight darkKnight = new DarkKnight("Dark Master", Sex.MALE, 100, WarriorUltimates.KOMBO);
+
+        connect(new H2Connector())
                 .openCrudSession(new CrudMethods())
-                .readRecord(Fighter.class, 1L);
-        System.out.println(record.getName() + " " + record.getEngergy());
+                .addRecord(warrior)
+                .addRecord(wizard)
+                .addRecord(soulMaster)
+                .addRecord(darkKnight)
+                .commitAndClose();
+
+//        Warrior record = (Warrior) connect(new H2Connector())
+//                .openCrudSession(new CrudMethods())
+//                .readRecord(Warrior.class, 1L);
+//        System.out.println(record.getName() + " " + record.getEngergy());
     }
     private static ConnectorManager connect(SessionConnector connector) {
         return ConnectorManager.connect(connector);
