@@ -21,6 +21,9 @@ public class Bookstore {
     @OneToMany(fetch = FetchType.LAZY, mappedBy="bookstore")
     private Set<BookstoreBook> bookstoreBooks = new HashSet<BookstoreBook>();
 
+    public Bookstore() {
+    }
+
     public Bookstore(String name) {
         this.name = name;
     }
@@ -47,5 +50,13 @@ public class Bookstore {
 
     public void setBookstoreBooks(Set<BookstoreBook> bookstoreBooks) {
         this.bookstoreBooks = bookstoreBooks;
+    }
+
+    @Override
+    public String toString() {
+        return "Bookstore{" +
+                "name='" + name + '\'' +
+                ", bookstoreBooks=" + bookstoreBooks +
+                '}';
     }
 }

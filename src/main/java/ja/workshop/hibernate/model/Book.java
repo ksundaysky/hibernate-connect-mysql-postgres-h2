@@ -18,7 +18,7 @@ public class Book {
     @Column(name = "title", updatable = false, nullable = false)
     private String title;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             joinColumns = {@JoinColumn(name = "book_id")},
             inverseJoinColumns = {@JoinColumn(name = "author_id")}
@@ -30,6 +30,9 @@ public class Book {
 
     @Enumerated(EnumType.STRING)
     private Genre genre;
+
+    public Book() {
+    }
 
     public Book(String title, Set<Author> authors, Genre genre) {
         this.title = title;
