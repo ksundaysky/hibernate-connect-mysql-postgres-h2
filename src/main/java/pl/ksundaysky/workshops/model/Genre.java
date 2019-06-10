@@ -1,4 +1,4 @@
-package ja.workshop.hibernate.model;
+package pl.ksundaysky.workshops.model;
 
 /**
  * @author Bartosz Kupajski

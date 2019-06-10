@@ -1,4 +1,4 @@
-package ja.workshop.hibernate.connectors;
+package pl.ksundaysky.workshops.connectors;
 
 import org.hibernate.Session;
 
