@@ -9,29 +9,29 @@ to store all the attributes of that class and all of its superclasses.
 
 #### Examples
 Lets assume we have hierarchy as shown on the diagram below:
+
 ![alt text](PNGs/ExampleOfHierarchy.png)
 
 Then single table strategy in data base looks:
+
 ![alt text](PNGs/SingleTableExample.png)
 
 Joined table strategy:
+
 ![alt text](PNGs/JoinedTableDiagram.png)
 
 Table per class:
+
 ![alt text](PNGs/TablePerClass-Diagram.png)
 
 
 
 Links: 
-- [wikibooks](https://en.wikibooks.org/wiki/Java_Persistence/Inheritance))
-- [baeldung](https://www.baeldung.com/hibernate-inheritance))
+- [wikibooks](https://en.wikibooks.org/wiki/Java_Persistence/Inheritance)
+- [baeldung](https://www.baeldung.com/hibernate-inheritance)
 
 ----
 ### TASK
-
-![alt text](ClassDiagram.png)
-
-
 
 Check how it works.
 
