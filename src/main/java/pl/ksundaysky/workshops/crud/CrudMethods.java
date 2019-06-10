@@ -11,6 +11,10 @@ import java.io.Serializable;
 public class CrudMethods implements ICrudMethods {
     private Session session;
 
+    public Session getSession() {
+        return session;
+    }
+
     @Override
     public void initializeSession(Session session) {
         this.session = session;

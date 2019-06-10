@@ -34,6 +34,8 @@ public class CriteriaApi {
         TypedQuery<T> typedQuery = session.createQuery(select);
         List<T> resultlist = typedQuery.getResultList();
 
+
+
         return resultlist;
     }
 }

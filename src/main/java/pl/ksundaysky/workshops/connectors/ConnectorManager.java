@@ -16,11 +16,12 @@ import java.util.List;
 public class ConnectorManager<T extends ISession> implements AutoCloseable {
     private T connector;
     private Transaction transaction;
-    private Session session;
+    private static Session session;
     private ICrudMethods crudMethods;
 
     private ConnectorManager(T connector) {
         this.connector = connector;
+        this.crudMethods = new CrudMethods();
     }
 
     public static <T extends ISession> ConnectorManager connect(T connector) {
@@ -48,7 +49,7 @@ public class ConnectorManager<T extends ISession> implements AutoCloseable {
 
     public void initializeSession() throws SessionInitializationException {
         try {
-            session = (session == null) ? connector.getSession() : session;
+            session = (session == null || !session.isConnected())  ? connector.getSession() : session;
             transaction = (transaction == null || !transaction.isActive()) ? session.beginTransaction() : transaction;
             crudMethods.initializeSession(session);
         } catch (ServiceException e) {
