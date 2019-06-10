@@ -1,15 +1,14 @@
 package ja.workshop.hibernate.connectors;
 
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.hibernate.Session;
 
 /**
- * @author Kamil Rojek
+ * @author Ola Podorska
  */
 public abstract class Connector {
 
-    public static SessionFactory getSessionFactory(){
-        return new Configuration().configure().buildSessionFactory();
+    public static Session getSessionFactory(){
+        return null;
     }
 
 }
