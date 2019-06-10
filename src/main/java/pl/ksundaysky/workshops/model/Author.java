@@ -14,14 +14,18 @@ public class Author {
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
-    @Column(name = "name", updatable = false, nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "surnname", updatable = false, nullable = false)
+    @Column(name = "surnname", nullable = false)
     private String surname;
 
     @ManyToMany(mappedBy = "authors")
     private List<Book> books;
+
+    public Author() {
+
+    }
 
     public Author(String name, String surname) {
         this.name = name;

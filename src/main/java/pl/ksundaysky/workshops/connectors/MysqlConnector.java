@@ -7,8 +7,7 @@ import java.util.Properties;
 /**
  * @author krzysztof.niedzielski
  */
-public class MysqlConnector extends Connector {
-
+public class MysqlConnector extends SessionConnector {
     @Override
     Properties loadConnectorSettings() {
         Properties settings = new Properties();

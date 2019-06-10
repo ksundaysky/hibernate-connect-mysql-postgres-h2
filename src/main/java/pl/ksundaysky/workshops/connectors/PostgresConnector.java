@@ -7,8 +7,7 @@ import java.util.Properties;
 /**
  * @author krzysztof.niedzielski
  */
-public class PostgresConnector extends Connector {
-
+public class PostgresConnector extends SessionConnector {
     @Override
     Properties loadConnectorSettings() {
         Properties settings = new Properties();
