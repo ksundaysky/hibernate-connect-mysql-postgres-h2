@@ -1,6 +1,6 @@
 package ja.workshop.hibernate.connectors;
 
-import org.hibernate.SessionFactory;
+import org.hibernate.Session;
 import org.hibernate.cfg.Configuration;
 
 /**
@@ -8,8 +8,8 @@ import org.hibernate.cfg.Configuration;
  */
 public abstract class Connector {
 
-    public static SessionFactory getSessionFactory(){
-        return new Configuration().configure().buildSessionFactory();
+    public static Session getSession(){
+        return new Configuration().configure().buildSessionFactory().getCurrentSession();
     }
 
 }
