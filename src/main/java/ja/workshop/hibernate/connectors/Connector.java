@@ -1,15 +1,13 @@
 package ja.workshop.hibernate.connectors;
 
-import ja.workshop.hibernate.model.Author;
-import ja.workshop.hibernate.model.Book;
-import ja.workshop.hibernate.model.Bookstore;
-import ja.workshop.hibernate.model.BookstoreBook;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+import java.io.File;
+import java.io.FileReader;
 import java.util.Properties;
 
 /**
@@ -42,10 +40,10 @@ public abstract class Connector implements ISession {
     }
 
     private void addEntites(Configuration configuration) {
-        configuration.addAnnotatedClass(Book.class);
+        /*configuration.addAnnotatedClass(Book.class);
         configuration.addAnnotatedClass(Author.class);
         configuration.addAnnotatedClass(Bookstore.class);
-        configuration.addAnnotatedClass(BookstoreBook.class);
+        configuration.addAnnotatedClass(BookstoreBook.class);*/
     }
 
     abstract Properties loadConnectorSettings();
