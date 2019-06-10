@@ -1,13 +1,16 @@
 package ja.workshop.hibernate;
 
-import ja.workshop.hibernate.connectors.H2Connector;
+import ja.workshop.hibernate.connectors.Connector;
+import org.hibernate.Session;
 
 /**
- * @author krzysztof.niedzielski
+ * @author Ola Podorska
  */
 public class App {
-    public static void main(String[] args) throws Exception {
-        new H2Connector().getSession(); //komentarzyk
+    private static Session session = Connector.getSessionFactory().getCurrentSession();
+
+    public static void main(String[] args) {
+        session.beginTransaction();
     }
 
 }
