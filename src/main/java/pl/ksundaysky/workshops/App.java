@@ -11,23 +11,22 @@ import pl.ksundaysky.workshops.model.*;
 public class App {
     public static void main(String[] args)
     {
-        Warrior warrior = new Warrior("Wojownik", Sex.MALE, 100);
-        Wizard wizard = new Wizard("Czarodziejka", Sex.FEMALE, 100);
-        SoulMaster soulMaster = new SoulMaster("Soul Master", Sex.MALE, 100, WizzarUltimate.GHOSTS);
-        DarkKnight darkKnight = new DarkKnight("Dark Master", Sex.MALE, 100, WarriorUltimates.KOMBO);
+        Armor armor = new Armor("Dark Armor", 2400, false, Champion.WARRIOR, 50);
+        Shoes shoes = new Shoes("Speedy shoes", 1000, false, Champion.ELF, 15);
+        Ring ring = new Ring("Speedy shoes", 1000, false, Champion.ELF, 15);
+        Sword sword = new Sword("Sharp blade", 2655, true, Champion.WARRIOR, false, 60);
+        Wand wand = new Wand("Kundun stuff", 2655, true, Champion.WIZZARD, true, 50);
+        Bow bow = new Bow("Mandarin Bow", 4500, false, Champion.ELF,false, 90);
 
         connect(new H2Connector())
                 .openCrudSession(new CrudMethods())
-                .addRecord(warrior)
-                .addRecord(wizard)
-                .addRecord(soulMaster)
-                .addRecord(darkKnight)
+                .addRecord(armor)
+                .addRecord(shoes)
+                .addRecord(ring)
+                .addRecord(sword)
+                .addRecord(wand)
+                .addRecord(bow)
                 .commitAndClose();
-
-//        Warrior record = (Warrior) connect(new H2Connector())
-//                .openCrudSession(new CrudMethods())
-//                .readRecord(Warrior.class, 1L);
-//        System.out.println(record.getName() + " " + record.getEngergy());
     }
     private static ConnectorManager connect(SessionConnector connector) {
         return ConnectorManager.connect(connector);
