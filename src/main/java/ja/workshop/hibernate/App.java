@@ -7,7 +7,7 @@ import org.hibernate.Session;
  * @author Ola Podorska
  */
 public class App {
-    private static Session session = Connector.getSessionFactory();
+    private static Session session = Connector.getSession();
 
     public static void main(String[] args) {
         session.beginTransaction();

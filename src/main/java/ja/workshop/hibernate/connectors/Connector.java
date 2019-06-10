@@ -7,7 +7,7 @@ import org.hibernate.Session;
  */
 public abstract class Connector {
 
-    public static Session getSessionFactory(){
+    public static Session getSession(){
         return null;
     }
 
