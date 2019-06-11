@@ -1,6 +1,6 @@
 package ja.workshop.hibernate.model;
 
-import  javax.persistence.*;
+import javax.persistence.*;
 import java.util.List;
 
 /**

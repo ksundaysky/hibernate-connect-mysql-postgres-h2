@@ -42,7 +42,6 @@ public class App {
 //                .commitAndClose();
 
 
-
     }
 
     private static ConnectorManager connect(SessionConnector connector) {
