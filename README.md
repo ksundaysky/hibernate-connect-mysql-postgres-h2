@@ -2,7 +2,7 @@
 
 1. Prepare H2 connection.
 2. Go to CollectionsTest class.
-3. Use prepared tests methods to prove, that a set of authors in the Book is a java.util.HashSet
+3. Fill tests methods in CollectionsTest.class to prove that a set of authors in the Book is a java.util.HashSet
    and after persistence is an org.hibernate.collection.internal.PersistentSet (use Author and Book classes).
 
 ## Documentation
