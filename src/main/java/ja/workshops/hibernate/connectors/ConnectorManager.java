@@ -1,10 +1,10 @@
-package pl.ksundaysky.workshops.connectors;
+package ja.workshops.hibernate.connectors;
 
+import ja.workshops.hibernate.crud.CrudHandler;
+import ja.workshops.hibernate.crud.ICrudMethods;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.service.spi.ServiceException;
-import pl.ksundaysky.workshops.crud.CrudHandler;
-import pl.ksundaysky.workshops.crud.ICrudMethods;
 
 import java.util.List;
 
@@ -12,7 +12,6 @@ import java.util.List;
  * Manages connection and operations between Java and Database.
  *
  * @author Kamil Rojek
- * @author Agnieszka Trzewik
  */
 public class ConnectorManager<T extends ISession> implements AutoCloseable {
     private T connector;
@@ -28,10 +27,10 @@ public class ConnectorManager<T extends ISession> implements AutoCloseable {
      * Handles specific connection to database.
      *
      * @param connector - database connector such a H2, MySql etc.
-     * @param <T> - type of connector
+     * @param <T>       - type of connector
      * @return - initialized ConnectorManager class
      */
-    public static <T extends ISession> ConnectorManager connect(T connector) {
+    public static <T extends ISession> ConnectorManager<T> connect(T connector) {
         return new ConnectorManager<>(connector);
     }
 
@@ -51,7 +50,7 @@ public class ConnectorManager<T extends ISession> implements AutoCloseable {
      * Commits objects into database and closes session.
      *
      * @throws SessionInitializationException - thrown when error occurs
-     * during session initialization.
+     *                                        during session initialization.
      */
     public void commitAndClose() throws SessionInitializationException {
         initializeSession();
@@ -65,7 +64,7 @@ public class ConnectorManager<T extends ISession> implements AutoCloseable {
      * @param recordsToCreate - list of records to add to database
      * @param recordsToUpdate - list of records to update in database
      * @throws SessionInitializationException - thrown when error occurs
-     * during session initialization.
+     *                                        during session initialization.
      */
     public void commitAndClose(List<?> recordsToCreate, List<?> recordsToUpdate) throws SessionInitializationException {
         initializeSession();
@@ -79,7 +78,7 @@ public class ConnectorManager<T extends ISession> implements AutoCloseable {
      * Initializes session.
      *
      * @throws SessionInitializationException - thrown when error occurs
-     * during session initialization.
+     *                                        during session initialization.
      */
     public void initializeSession() throws SessionInitializationException {
         try {
@@ -96,7 +95,7 @@ public class ConnectorManager<T extends ISession> implements AutoCloseable {
      *
      * @return session object
      * @throws SessionInitializationException - thrown when error occurs
-     * during session initialization.
+     *                                        during session initialization.
      */
     public Session getSession() throws SessionInitializationException {
         initializeSession();

@@ -1,8 +1,8 @@
-package pl.ksundaysky.workshops.crud;
+package ja.workshops.hibernate.crud;
 
+import ja.workshops.hibernate.connectors.ConnectorManager;
+import ja.workshops.hibernate.connectors.SessionInitializationException;
 import org.hibernate.Session;
-import pl.ksundaysky.workshops.connectors.ConnectorManager;
-import pl.ksundaysky.workshops.connectors.SessionInitializationException;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -21,11 +21,11 @@ import java.util.List;
  */
 public class CrudHandler {
     private ICrudMethods crudMethods;
-    private ConnectorManager connectorManager;
+    private ConnectorManager<?> connectorManager;
     private List<Object> recordsToAdd;
     private List<Object> recordsToUpdate;
 
-    private CrudHandler(ICrudMethods crudMethods, ConnectorManager connectorManager) {
+    private CrudHandler(ICrudMethods crudMethods, ConnectorManager<?> connectorManager) {
         this.crudMethods = crudMethods;
         this.connectorManager = connectorManager;
         recordsToAdd = new ArrayList<>();
@@ -39,7 +39,7 @@ public class CrudHandler {
      * @param connectorManager - manager of connection between java and database
      * @return CrudHandler
      */
-    public static CrudHandler initiliazieCrudHandler(ICrudMethods crudMethods, ConnectorManager connectorManager) {
+    public static CrudHandler initiliazieCrudHandler(ICrudMethods crudMethods, ConnectorManager<?> connectorManager) {
         return new CrudHandler(crudMethods, connectorManager);
     }
 
@@ -101,7 +101,7 @@ public class CrudHandler {
      * @param <T>   - type of identity
      * @return - record as an object
      */
-    public <T extends Serializable> Object readRecord(Class clazz, T id) {
+    public <T extends Serializable> Object readRecord(Class<?> clazz, T id) {
         try (Session session = connectorManager.getSession()) {
             crudMethods.initializeSession(session);
             return crudMethods.read(clazz, id);
