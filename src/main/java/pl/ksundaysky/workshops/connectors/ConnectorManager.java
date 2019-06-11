@@ -32,7 +32,7 @@ public class ConnectorManager<T extends ISession> implements AutoCloseable {
      * @param <T> - type of connector
      * @return - initialized ConnectorManager class
      */
-    public static <T extends ISession> ConnectorManager connect(T connector) {
+    public static <T extends ISession> ConnectorManager<T> connect(T connector) {
         return new ConnectorManager<>(connector);
     }
 

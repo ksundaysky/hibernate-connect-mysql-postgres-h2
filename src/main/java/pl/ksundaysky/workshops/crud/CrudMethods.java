@@ -41,14 +41,14 @@ public class CrudMethods implements ICrudMethods {
     /**
      * Reads object from database.
      *
-     * @param c - class that is mapped on record we want to read
+     * @param clazz - class that is mapped on record we want to read
      * @param id - index of record
      * @param <T> - type of index
      * @return - record as an object
      */
     @Override
-    public <T extends Serializable> Object read(Class c, T id) {
-        return session.get(c, id);
+    public <T extends Serializable> Object read(Class<?> clazz, T id) {
+        return session.get(clazz, id);
     }
 
     /**
