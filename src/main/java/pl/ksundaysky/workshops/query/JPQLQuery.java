@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @author krzysztof.niedzielski
  */
-public class CriteriaApi implements IQuery {
+public class JPQLQuery implements IQuery {
     @Override
     public <T> List<T> listAll(Session session, Class T ){
        return null;

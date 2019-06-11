@@ -10,8 +10,13 @@ import java.util.List;
  */
 public class HQLQuery implements  IQuery {
 
+    @Override
     public <T> List<T> listAll(Session session, Class T ){
-        List<T> list = session.createQuery("FROM Author").list();
-        return list;
+       return null;
+    }
+
+    @Override
+    public List<Author> listAllAuthorsWithSpecifiedName(Session session, String name) {
+        return null;
     }
 }

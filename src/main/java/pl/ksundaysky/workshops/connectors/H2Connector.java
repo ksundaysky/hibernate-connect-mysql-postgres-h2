@@ -8,6 +8,16 @@ import java.util.Properties;
  * @author krzysztof.niedzielski
  */
 public class H2Connector extends SessionConnector {
+
+    String ddlAuto = "create";
+
+    public H2Connector(String ddlAuto) {
+        this.ddlAuto = ddlAuto;
+    }
+
+    public H2Connector() {
+    }
+
     @Override
     Properties loadConnectorSettings() {
         Properties settings = new Properties();
@@ -17,7 +27,7 @@ public class H2Connector extends SessionConnector {
         settings.put(Environment.PASS, "");
         settings.put(Environment.DIALECT, "org.hibernate.dialect.H2Dialect");
         settings.put(Environment.SHOW_SQL, "true");
-        settings.put(Environment.HBM2DDL_AUTO, "update");
+        settings.put(Environment.HBM2DDL_AUTO,ddlAuto);
         settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
         return settings;
     }
