@@ -6,16 +6,29 @@ import org.hibernate.Session;
 import java.io.Serializable;
 
 /**
+ * Represents basic crud methods.
+ *
  * @author Kamil Rojek
  */
 public class CrudMethods implements ICrudMethods {
     private Session session;
 
+    /**
+     * Initializes session by passing argument.
+     *
+     * @param session
+     */
     @Override
     public void initializeSession(Session session) {
         this.session = session;
     }
 
+    /**
+     * Creates new record in database.
+     *
+     * @param record - record to create
+     * @param <R> - type of record
+     */
     @Override
     public <R> void create(R record) {
         try {
@@ -25,11 +38,25 @@ public class CrudMethods implements ICrudMethods {
         }
     }
 
+    /**
+     * Reads object from database.
+     *
+     * @param c - class that is mapped on record we want to read
+     * @param id - index of record
+     * @param <T> - type of index
+     * @return - record as an object
+     */
     @Override
     public <T extends Serializable> Object read(Class c, T id) {
         return session.get(c, id);
     }
 
+    /**
+     * Updates specific record in database.
+     *
+     * @param record - record to update
+     * @param <R> - type of record
+     */
     @Override
     public <R> void update(R record) {
         try {
@@ -39,6 +66,12 @@ public class CrudMethods implements ICrudMethods {
         }
     }
 
+    /**
+     * Deletes specific record from database.
+     *
+     * @param record - record to delete
+     * @param <R> - type of record
+     */
     @Override
     public <R> void delete(R record) {
         session.delete(record);
