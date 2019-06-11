@@ -1,4 +1,4 @@
-package pl.ksundaysky.workshops.query;
+package ja.workshops.hibernate.query;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;

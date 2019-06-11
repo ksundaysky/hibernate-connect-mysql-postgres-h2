@@ -1,8 +1,8 @@
-package pl.ksundaysky.workshops.crud;
+package ja.workshops.hibernate.crud;
 
 import org.hibernate.Session;
-import pl.ksundaysky.workshops.connectors.ConnectorManager;
-import pl.ksundaysky.workshops.connectors.SessionInitializationException;
+import ja.workshops.hibernate.connectors.ConnectorManager;
+import ja.workshops.hibernate.connectors.SessionInitializationException;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -14,11 +14,11 @@ import java.util.List;
  */
 public class CrudHandler {
     private ICrudMethods crudMethods;
-    private ConnectorManager connectorManager;
+    private ConnectorManager<?> connectorManager;
     private List<Object> recordsToAdd;
     private List<Object> recordsToUpdate;
 
-    private CrudHandler(ICrudMethods crudMethods, ConnectorManager connectorManager) {
+    private CrudHandler(ICrudMethods crudMethods, ConnectorManager<?> connectorManager) {
         this.crudMethods = crudMethods;
         this.connectorManager = connectorManager;
 
@@ -26,7 +26,7 @@ public class CrudHandler {
         recordsToUpdate = new ArrayList<>();
     }
 
-    public static CrudHandler initiliazieCrudHandler(ICrudMethods crudMethods, ConnectorManager connectorManager) {
+    public static CrudHandler initiliazieCrudHandler(ICrudMethods crudMethods, ConnectorManager<?> connectorManager) {
         return new CrudHandler(crudMethods, connectorManager);
     }
 
@@ -55,10 +55,10 @@ public class CrudHandler {
         return this;
     }
 
-    public <T extends Serializable> Object readRecord(Class clas, T id) {
+    public <T extends Serializable> Object readRecord(Class<?> clazz, T id) {
         try (Session session = connectorManager.getSession()) {
             crudMethods.initializeSession(session);
-            return crudMethods.read(clas, id);
+            return crudMethods.read(clazz, id);
         } catch (SessionInitializationException e) {
             e.printStackTrace();
             return null;

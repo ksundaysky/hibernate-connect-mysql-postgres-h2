@@ -1,4 +1,4 @@
-package pl.ksundaysky.workshops.crud;
+package ja.workshops.hibernate.crud;
 
 import org.hibernate.MappingException;
 import org.hibernate.Session;
@@ -21,13 +21,13 @@ public class CrudMethods implements ICrudMethods {
         try {
             session.persist(record);
         } catch (MappingException e) {
-            System.err.println("Adding record failed -> " + record.toString());
+            System.err.println("Adding record failed -> " + record);
         }
     }
 
     @Override
-    public <T extends Serializable> Object read(Class c, T id) {
-        return session.get(c, id);
+    public <T extends Serializable> Object read(Class<?> clazz, T id) {
+        return session.get(clazz, id);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class CrudMethods implements ICrudMethods {
         try {
             session.saveOrUpdate(record);
         } catch (MappingException e) {
-            System.err.println("Updating record failed -> " + record.toString());
+            System.err.println("Updating record failed -> " + record);
         }
     }
 

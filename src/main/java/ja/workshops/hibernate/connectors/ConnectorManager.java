@@ -1,11 +1,10 @@
-package pl.ksundaysky.workshops.connectors;
+package ja.workshops.hibernate.connectors;
 
+import ja.workshops.hibernate.crud.CrudHandler;
+import ja.workshops.hibernate.crud.ICrudMethods;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.service.spi.ServiceException;
-import pl.ksundaysky.workshops.crud.CrudHandler;
-import pl.ksundaysky.workshops.crud.CrudMethods;
-import pl.ksundaysky.workshops.crud.ICrudMethods;
 
 import java.util.List;
 
@@ -23,7 +22,7 @@ public class ConnectorManager<T extends ISession> implements AutoCloseable {
         this.connector = connector;
     }
 
-    public static <T extends ISession> ConnectorManager connect(T connector) {
+    public static <T extends ISession> ConnectorManager<T> connect(T connector) {
         return new ConnectorManager<>(connector);
     }
 
