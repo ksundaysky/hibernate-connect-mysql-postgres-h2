@@ -1,4 +1,4 @@
-# Date and time
+## Date and time
 
 @Temporal annotation in Hibernate
 
@@ -21,7 +21,7 @@ it’s common to use the java.util or java.time instead.*
     then reapplied when you fetch it.
     * DATETIME is an 8-byte string of digits "yyyymmddhhmmss"
 
-##Task:
+# Task:
 
 1. Implement in Author his date of birth using java.util.Calendar (remember about using proper TemporalType).
 2. Next implement date of adding Author to the database using java.util.Date.
