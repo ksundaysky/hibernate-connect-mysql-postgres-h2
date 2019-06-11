@@ -11,20 +11,15 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author bartosz.kupajski
  */
-public class App {
-    public static void main(String[] args) throws Exception {
-
+class App {
+    public static void main(String[] args) {
         dodajKordiana();
-
         tworzenieWalczącychWątków(1L);
-
     }
 
-
-
     private static void tworzenieWalczącychWątków(long id) {
-        Thread wątekPrzegrywający = new Thread(new WątekWalczącyPrzegrywający(id),"WątekPrzegrywający");
-        Thread wątekWygrywający = new Thread(new WątekWalczącyWygrywający(id),"WątekWygrywający");
+        Thread wątekPrzegrywający = new Thread(new WątekWalczącyPrzegrywający(id), "WątekPrzegrywający");
+        Thread wątekWygrywający = new Thread(new WątekWalczącyWygrywający(id), "WątekWygrywający");
 
         wątekPrzegrywający.start();
         wątekWygrywający.start();
@@ -34,13 +29,13 @@ public class App {
         Author pisarzJuliusz = new Author("Juliusz", "Słowacki");
         Book ksiażkaKordian = new Book("Kordian", Set.of(pisarzJuliusz), Genre.CLASSIC);
         Bookstore ksiegarniaPodGlobusem = new Bookstore("Ksiegarnia Pod Globusem");
+        BookstoreBook summary = new BookstoreBook(ksiegarniaPodGlobusem, ksiażkaKordian, 12);
         Transaction transaction = null;
 
         try (Session session = new H2Connector().getSession()) {
             transaction = session.beginTransaction();
 
             session.save(ksiażkaKordian);
-            BookstoreBook summary = new BookstoreBook(ksiegarniaPodGlobusem, ksiażkaKordian, 12);
             session.save(summary);
 
             transaction.commit();
@@ -50,13 +45,13 @@ public class App {
         }
     }
 
-    private static class WątekWalczącyPrzegrywający implements Runnable{
+    private static class WątekWalczącyPrzegrywający implements Runnable {
 
         Session session1 = new H2Connector().getSession();
         Transaction tx = null;
         long personId;
 
-        public WątekWalczącyPrzegrywający(long personId) {
+        WątekWalczącyPrzegrywający(long personId) {
             this.personId = personId;
         }
 
@@ -78,7 +73,7 @@ public class App {
         }
     }
 
-    private  static class WątekWalczącyWygrywający implements Runnable {
+    private static class WątekWalczącyWygrywający implements Runnable {
 
         Session session2 = new H2Connector().getSession();
         Transaction tx = null;
