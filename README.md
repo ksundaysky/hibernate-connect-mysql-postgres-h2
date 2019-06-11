@@ -25,7 +25,7 @@ it’s common to use the java.util or java.time instead.*
 
 1. Implement in Author his date of birth using java.util.Calendar (remember about using proper TemporalType).
 2. Next implement date of adding Author to the database using java.util.Date.
-3. Implement in Book date of issue using java.time.
+3. Implement date of issue in Book using java.time.
 
 
 ### Documentation 
