@@ -1,15 +1,15 @@
-package pl.ksundaysky.workshops.connectors;
+package ja.workshop.hibernate.connectors;
 
+import ja.workshop.hibernate.model.Author;
+import ja.workshop.hibernate.model.Book;
+import ja.workshop.hibernate.model.Person;
+import ja.workshop.hibernate.model.Umowa;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
-import pl.ksundaysky.workshops.model.Author;
-import pl.ksundaysky.workshops.model.Book;
-import pl.ksundaysky.workshops.model.Person;
-import pl.ksundaysky.workshops.model.Umowa;
 
 import java.util.Properties;
 

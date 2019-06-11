@@ -1,10 +1,12 @@
-package pl.ksundaysky.workshops;
+package ja.workshop.hibernate;
 
+import ja.workshop.hibernate.connectors.Connector;
+import ja.workshop.hibernate.connectors.H2Connector;
+import ja.workshop.hibernate.model.Author;
+import ja.workshop.hibernate.model.Book;
+import ja.workshop.hibernate.model.Genre;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import pl.ksundaysky.workshops.connectors.Connector;
-import pl.ksundaysky.workshops.connectors.H2Connector;
-import pl.ksundaysky.workshops.model.*;
 
 import java.util.Collections;
 import java.util.HashSet;
