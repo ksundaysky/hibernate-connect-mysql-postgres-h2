@@ -22,3 +22,5 @@ If that concurrent changes happen to exist, the current transaction aborts becau
  `@Version public long version;`
  
  The version property on the class can be numeric (short, int, or long) or timestamp or calendar. 
+ 
+ Go to App class, read instruction and start task.
