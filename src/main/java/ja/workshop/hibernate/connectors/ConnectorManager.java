@@ -6,6 +6,7 @@ import org.hibernate.Transaction;
 import org.hibernate.service.spi.ServiceException;
 import ja.workshop.hibernate.crud.ICrudMethods;
 
+
 import java.util.List;
 
 /**
@@ -28,7 +29,7 @@ public class ConnectorManager<T extends ISession> implements AutoCloseable {
 
     public CrudHandler openCrudSession(ICrudMethods crudMethods) {
         this.crudMethods = crudMethods;
-        return CrudHandler.initiliazieCrudHandler(crudMethods, this);
+        return CrudHandler.initializeCrudHandler(crudMethods, this);
     }
 
     public void commitAndClose() throws SessionInitializationException {
@@ -45,7 +46,7 @@ public class ConnectorManager<T extends ISession> implements AutoCloseable {
         close();
     }
 
-    public void initializeSession() throws SessionInitializationException {
+    private void initializeSession() throws SessionInitializationException {
         try {
             session = (session == null) ? connector.getSession() : session;
             transaction = (transaction == null || !transaction.isActive()) ? session.beginTransaction() : transaction;

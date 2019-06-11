@@ -10,7 +10,10 @@ import ja.workshop.hibernate.model.Genre;
 import ja.workshop.hibernate.crud.CrudMethods;
 
 import java.time.LocalDate;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Kamil Rojek
@@ -19,9 +22,8 @@ public class App {
 
     public static void main(String[] args) {
 
-
         Calendar dateOfBirth1 = Calendar.getInstance();
-        dateOfBirth1.set(1976,Calendar.MARCH,11);
+        dateOfBirth1.set(1976, Calendar.MARCH, 11);
 
         Calendar dateOfBirth2 = new Calendar.Builder().setDate(1980, Calendar.APRIL, 4).build();
 
@@ -40,9 +42,6 @@ public class App {
                 .addRecord(authors)
                 .addRecord(bookWithDateOfIssue)
                 .commitAndClose();
-
-
-
     }
 
     private static ConnectorManager connect(SessionConnector connector) {

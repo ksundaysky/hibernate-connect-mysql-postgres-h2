@@ -1,8 +1,8 @@
 package ja.workshop.hibernate.crud;
 
-import org.hibernate.Session;
 import ja.workshop.hibernate.connectors.ConnectorManager;
 import ja.workshop.hibernate.connectors.SessionInitializationException;
+import org.hibernate.Session;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class CrudHandler {
         recordsToUpdate = new ArrayList<>();
     }
 
-    public static CrudHandler initiliazieCrudHandler(ICrudMethods crudMethods, ConnectorManager connectorManager) {
+    public static CrudHandler initializeCrudHandler(ICrudMethods crudMethods, ConnectorManager connectorManager) {
         return new CrudHandler(crudMethods, connectorManager);
     }
 
