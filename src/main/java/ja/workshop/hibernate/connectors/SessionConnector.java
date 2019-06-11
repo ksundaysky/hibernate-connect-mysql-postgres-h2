@@ -1,11 +1,10 @@
-package pl.ksundaysky.workshops.connectors;
+package ja.workshop.hibernate.connectors;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-import pl.ksundaysky.workshops.model.*;
 
 import java.util.Properties;
 
@@ -16,6 +15,7 @@ import java.util.Properties;
  */
 public abstract class SessionConnector implements ISession {
     private SessionFactory sessionFactory;
+
     /**
      * Opens session from SessionFactory.
      *
@@ -25,6 +25,7 @@ public abstract class SessionConnector implements ISession {
     public Session getSession() {
         return this.getSessionFactory().openSession();
     }
+
     private SessionFactory getSessionFactory() {
         if (sessionFactory != null)
             return sessionFactory;
@@ -33,6 +34,7 @@ public abstract class SessionConnector implements ISession {
                 .applySettings(configuration.getProperties()).build();
         return sessionFactory = configuration.buildSessionFactory(serviceRegistry);
     }
+
     private Configuration createConfiguration() {
         Properties settings = loadConnectorSettings();
         Configuration configuration = new Configuration();
@@ -40,6 +42,7 @@ public abstract class SessionConnector implements ISession {
         addEntities(configuration);
         return configuration;
     }
+
     /**
      * Adds entities to project configuration.
      *
@@ -48,5 +51,6 @@ public abstract class SessionConnector implements ISession {
     private void addEntities(Configuration configuration) {
         configuration.addAnnotatedClass(YOUR CLASSES);
     }
+
     abstract Properties loadConnectorSettings();
 }

@@ -1,9 +1,8 @@
-package pl.ksundaysky.workshops;
-import pl.ksundaysky.workshops.connectors.ConnectorManager;
-import pl.ksundaysky.workshops.connectors.H2Connector;
-import pl.ksundaysky.workshops.connectors.SessionConnector;
-import pl.ksundaysky.workshops.crud.CrudMethods;
-import pl.ksundaysky.workshops.model.*;
+package ja.workshop.hibernate;
+import ja.workshop.hibernate.connectors.ConnectorManager;
+import ja.workshop.hibernate.connectors.H2Connector;
+import ja.workshop.hibernate.connectors.SessionConnector;
+import ja.workshop.hibernate.crud.CrudMethods;
 
 /**
  * @author Kamil Rojek

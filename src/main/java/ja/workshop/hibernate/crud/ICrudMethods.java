@@ -1,4 +1,4 @@
-package pl.ksundaysky.workshops.crud;
+package ja.workshop.hibernate.crud;
 
 import org.hibernate.Session;
 

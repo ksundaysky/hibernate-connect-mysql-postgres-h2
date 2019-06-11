@@ -1,10 +1,10 @@
-package pl.ksundaysky.workshops.connectors;
+package ja.workshop.hibernate.connectors;
 
+import ja.workshop.hibernate.crud.CrudHandler;
+import ja.workshop.hibernate.crud.ICrudMethods;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.service.spi.ServiceException;
-import pl.ksundaysky.workshops.crud.CrudHandler;
-import pl.ksundaysky.workshops.crud.ICrudMethods;
 
 import java.util.List;
 
