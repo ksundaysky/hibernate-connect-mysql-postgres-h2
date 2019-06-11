@@ -8,7 +8,7 @@ import org.hibernate.cfg.Configuration;
  */
 public abstract class Connector {
 
-    public static Session getSession(){
+    public static Session getSession() {
         return new Configuration().configure().buildSessionFactory().getCurrentSession();
     }
 

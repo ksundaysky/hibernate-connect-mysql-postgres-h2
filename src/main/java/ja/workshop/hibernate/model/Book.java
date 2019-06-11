@@ -13,7 +13,7 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
-    private Long id;
+    private long id;
 
     @Column(name = "title", updatable = false, nullable = false)
     private String title;
@@ -25,7 +25,7 @@ public class Book {
     )
     private Set<Author> authors = new HashSet<>();
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy="book")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "book")
     private Set<BookstoreBook> bookstoreBooks = new HashSet<>();
 
     @Enumerated(EnumType.STRING)
