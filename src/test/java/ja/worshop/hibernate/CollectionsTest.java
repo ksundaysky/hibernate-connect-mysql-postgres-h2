@@ -23,7 +23,6 @@ public class CollectionsTest {
         //Act
 
         //Assert
-
     }
 
     @Test
@@ -34,6 +33,5 @@ public class CollectionsTest {
         //Act
 
         //Assert
-
     }
 }
