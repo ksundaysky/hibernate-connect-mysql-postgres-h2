@@ -1,6 +1,6 @@
-package pl.ksundaysky.workshops.connectors.EntityManager;
+package ja.workshops.hibernate.connectors.EntityManager;
 
-import pl.ksundaysky.workshops.connectors.ISession;
+import ja.workshops.hibernate.connectors.ISession;
 
 import javax.persistence.EntityManager;
 

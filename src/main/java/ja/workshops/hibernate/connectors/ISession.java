@@ -1,4 +1,4 @@
-package pl.ksundaysky.workshops.connectors;
+package ja.workshops.hibernate.connectors;
 
 /**
  * @author krzysztof.kramarz

@@ -1,10 +1,10 @@
-package pl.ksundaysky.workshops;
+package ja.workshops.hibernate;
 
-import pl.ksundaysky.workshops.connectors.SessionCloseException;
-import pl.ksundaysky.workshops.connectors.SessionInitializationException;
-import pl.ksundaysky.workshops.model.Author;
-import pl.ksundaysky.workshops.model.Book;
-import pl.ksundaysky.workshops.model.Genre;
+import ja.workshops.hibernate.connectors.SessionCloseException;
+import ja.workshops.hibernate.connectors.SessionInitializationException;
+import ja.workshops.hibernate.model.Author;
+import ja.workshops.hibernate.model.Book;
+import ja.workshops.hibernate.model.Genre;
 
 import java.util.Set;
 

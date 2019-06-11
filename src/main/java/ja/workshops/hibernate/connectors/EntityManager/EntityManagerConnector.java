@@ -1,4 +1,4 @@
-package pl.ksundaysky.workshops.connectors.EntityManager;
+package ja.workshops.hibernate.connectors.EntityManager;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

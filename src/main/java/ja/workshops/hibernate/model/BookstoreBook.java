@@ -1,4 +1,4 @@
-package pl.ksundaysky.workshops.model;
+package ja.workshops.hibernate.model;
 
 import javax.persistence.*;
 

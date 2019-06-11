@@ -1,8 +1,8 @@
-package pl.ksundaysky.workshops.connectors.EntityManager;
+package ja.workshops.hibernate.connectors.EntityManager;
 
-import pl.ksundaysky.workshops.connectors.ConnectorManager;
-import pl.ksundaysky.workshops.connectors.SessionCloseException;
-import pl.ksundaysky.workshops.connectors.SessionInitializationException;
+import ja.workshops.hibernate.connectors.ConnectorManager;
+import ja.workshops.hibernate.connectors.SessionCloseException;
+import ja.workshops.hibernate.connectors.SessionInitializationException;
 
 import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
