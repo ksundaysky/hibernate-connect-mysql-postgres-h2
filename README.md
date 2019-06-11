@@ -14,3 +14,5 @@ Implement query methods in 4 classes:
 2. Check connection credentials in H2Connector class, especially: url, username and password
 3. Run tests
 4. All test passed == you finished  :muscle:
+
+**Run tests sequentially!**
