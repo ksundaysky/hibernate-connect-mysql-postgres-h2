@@ -27,6 +27,8 @@ it’s common to use the java.util or java.time instead.*
 2. Next implement date of adding Author to the database using java.util.Date.
 3. Implement date of issue in Book using java.time.
 
+*Don't forget to configure your Connector*
+
 
 ### Documentation 
 

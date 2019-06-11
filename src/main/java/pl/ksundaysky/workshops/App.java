@@ -5,7 +5,6 @@ import pl.ksundaysky.workshops.connectors.*;
 import pl.ksundaysky.workshops.crud.CrudMethods;
 import pl.ksundaysky.workshops.model.*;
 
-import java.time.LocalDate;
 import java.util.*;
 
 /**
@@ -16,25 +15,32 @@ public class App {
     public static void main(String[] args) {
 
 
-        Calendar calendar1 = Calendar.getInstance();
-        calendar1.set(1976,Calendar.MARCH,11);
+        //TODO: Implement Calender using method getInstance():
+        Calendar dateOfBirth1;
 
-        Calendar calendar2 = new Calendar.Builder().setDate(1980, Calendar.APRIL, 4).build();
+        //TODO: Implement Calender using Builder:
+        Calendar dateOfBirth2;
 
-        Author authorWithDateOfBirth1 = new Author("Anna", "Wajda", calendar1, new Date());
-        Author authorWithDateOfBirth2 = new Author("Stanisław", "Kowalski", calendar2, new Date());
+        //TODO: Complete implementation with java.util.Date:
+//        Author authorWithDateOfBirth1 = new Author("Anna", "Wajda", dateOfBirth1, );
+//        Author authorWithDateOfBirth2 = new Author("Stanisław", "Kowalski", dateOfBirth2, );
 
-        Set<Author> authors = new HashSet<>();
-        authors.add(authorWithDateOfBirth1);
-        authors.add(authorWithDateOfBirth2);
+        //TODO: Uncomment after completing previous tasks:
+//        Set<Author> authors = new HashSet<>();
+//        authors.add(authorWithDateOfBirth1);
+//        authors.add(authorWithDateOfBirth2);
 
-        Book bookWithDateOfIssue = new Book("Fantastyczna książka", authors, Genre.FANTASY, LocalDate.of(1998, 6, 10));
+        //TODO: Implement date of issue using java.time:
+        //?? dateOfIssue;
 
-        connect(new H2Connector())
-                .openCrudSession(new CrudMethods())
-                .addRecord(authors)
-                .addRecord(bookWithDateOfIssue)
-                .commitAndClose();
+        //TODO: Uncomment after completing previous tasks:
+//        Book bookWithDateOfIssue = new Book("Fantastyczna książka", authors, Genre.FANTASY, dateOfIssue);
+//
+//        connect(new H2Connector())
+//                .openCrudSession(new CrudMethods())
+//                .addRecord(authors)
+//                .addRecord(bookWithDateOfIssue)
+//                .commitAndClose();
 
 
 
