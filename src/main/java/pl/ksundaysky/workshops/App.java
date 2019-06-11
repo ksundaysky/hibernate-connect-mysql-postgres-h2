@@ -22,8 +22,8 @@ public class App {
         Calendar dateOfBirth2;
 
         //TODO: Complete implementation with java.util.Date:
-//        Author authorWithDateOfBirth1 = new Author("Anna", "Wajda", dateOfBirth1, );
-//        Author authorWithDateOfBirth2 = new Author("Stanisław", "Kowalski", dateOfBirth2, );
+//        Author authorWithDateOfBirth1 = new Author("Anna", "Wajda", dateOfBirth1, ??);
+//        Author authorWithDateOfBirth2 = new Author("Stanisław", "Kowalski", dateOfBirth2, ??);
 
         //TODO: Uncomment after completing previous tasks:
 //        Set<Author> authors = new HashSet<>();

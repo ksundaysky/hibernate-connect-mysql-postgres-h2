@@ -1,4 +1,4 @@
-## Date and time
+# Date and time
 
 @Temporal annotation in Hibernate
 
@@ -30,7 +30,7 @@ it’s common to use the java.util or java.time instead.*
 *Don't forget to configure your Connector*
 
 
-### Documentation 
+## Documentation 
 
 Checkout documentation:
 
@@ -41,7 +41,7 @@ Checkout documentation:
 * [java.time.ZoneOffset](https://docs.oracle.com/javase/8/docs/api/java/time/ZoneOffset.html)
 * [java.time.OffsetTime](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetTime.html)
 
-### Tips 
+## Tips 
 
 If you install db for first time (or forget how to do it):
 
