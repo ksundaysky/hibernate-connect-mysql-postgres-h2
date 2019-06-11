@@ -23,11 +23,6 @@ public class App {
                 .addRecord(soulMaster)
                 .addRecord(darkKnight)
                 .commitAndClose();
-
-//        Warrior record = (Warrior) connect(new H2Connector())
-//                .openCrudSession(new CrudMethods())
-//                .readRecord(Warrior.class, 1L);
-//        System.out.println(record.getName() + " " + record.getEngergy());
     }
     private static ConnectorManager connect(SessionConnector connector) {
         return ConnectorManager.connect(connector);
