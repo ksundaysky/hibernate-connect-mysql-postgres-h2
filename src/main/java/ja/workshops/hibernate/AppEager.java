@@ -1,9 +1,9 @@
-package ja.workshop.hibernate;
+package ja.workshops.hibernate;
 
-import ja.workshop.hibernate.connectors.H2Connector;
-import ja.workshop.hibernate.model.Author;
-import ja.workshop.hibernate.model.Book;
-import ja.workshop.hibernate.model.Genre;
+import ja.workshops.hibernate.connectors.H2Connector;
+import ja.workshops.hibernate.model.Author;
+import ja.workshops.hibernate.model.Book;
+import ja.workshops.hibernate.model.Genre;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -13,9 +13,9 @@ import java.util.HashSet;
 /**
  * Here is an example of eager loading.
  * TODO: start program and see what will happen
- * TODO: than comment 49 line, uncomment 46 and start again
+ * TODO: then comment 49 line, uncomment 46 and start again
  * What did you see? What queries did Hibernate?
- * --> When you finish, go to AppLazy class
+ * --> When you are done, go to AppLazy class
  *
  * @author Ola Podorska
  */
@@ -49,7 +49,5 @@ public class AppEager {
         System.out.println("--> my book: " + book);
         System.out.println("--> authors: " + book.getAuthors());
         session.close();
-
     }
-
 }

@@ -1,7 +1,7 @@
-package ja.workshop.hibernate;
+package ja.workshops.hibernate;
 
-import ja.workshop.hibernate.connectors.H2Connector;
-import ja.workshop.hibernate.model.Bookstore;
+import ja.workshops.hibernate.connectors.H2Connector;
+import ja.workshops.hibernate.model.Bookstore;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -9,7 +9,7 @@ import org.hibernate.Transaction;
  *  Here is an example of lazy loading.
  *  TODO: start program and see what will happen
  *  TODO: than comment 39 line, uncomment 37 and start again
- *  What did you see? What queries did Hibernate?
+ *  What did you see? What queries did Hibernate run?
  *  Is there a problem? Why/why not?
  *
  * @author Ola Podorska
@@ -32,7 +32,5 @@ public class AppLazy {
 //        session.close();
         System.out.println("--> my bookstore: " + bookstore);
         session.close();
-
     }
-
 }
