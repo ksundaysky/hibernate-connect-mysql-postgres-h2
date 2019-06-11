@@ -30,6 +30,7 @@ table per class:
 
 _You should read:_ 
 - [wikibooks](https://en.wikibooks.org/wiki/Java_Persistence/Inheritance)
+- [devglan](https://www.devglan.com/hibernate/hibernate-inheritance-example)
 - [baeldung](https://www.baeldung.com/hibernate-inheritance)
 
 ----
