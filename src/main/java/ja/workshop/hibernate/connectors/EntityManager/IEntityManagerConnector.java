@@ -1,6 +1,6 @@
-package ja.workshops.hibernate.connectors.EntityManager;
+package ja.workshop.hibernate.connectors.EntityManager;
 
-import ja.workshops.hibernate.connectors.ISession;
+import ja.workshop.hibernate.connectors.ISession;
 
 import javax.persistence.EntityManager;
 

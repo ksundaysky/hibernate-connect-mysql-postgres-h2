@@ -1,4 +1,4 @@
-package ja.workshops.hibernate.connectors.EntityManager;
+package ja.workshop.hibernate.connectors.EntityManager;
 
 /**
  * @author krzysztof.kramarz

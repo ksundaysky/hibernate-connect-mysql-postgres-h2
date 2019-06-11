@@ -1,8 +1,8 @@
-package ja.workshops.hibernate.connectors.EntityManager;
+package ja.workshop.hibernate.connectors.EntityManager;
 
-import ja.workshops.hibernate.connectors.ConnectorManager;
-import ja.workshops.hibernate.connectors.SessionCloseException;
-import ja.workshops.hibernate.connectors.SessionInitializationException;
+import ja.workshop.hibernate.connectors.ConnectorManager;
+import ja.workshop.hibernate.connectors.SessionCloseException;
+import ja.workshop.hibernate.connectors.SessionInitializationException;
 
 import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;

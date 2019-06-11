@@ -1,4 +1,4 @@
-package ja.workshops.hibernate.connectors;
+package ja.workshop.hibernate.connectors;
 
 /**
  * @author Kamil Rojek

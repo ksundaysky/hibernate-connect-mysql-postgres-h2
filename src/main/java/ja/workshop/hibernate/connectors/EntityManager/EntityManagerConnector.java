@@ -1,4 +1,4 @@
-package ja.workshops.hibernate.connectors.EntityManager;
+package ja.workshop.hibernate.connectors.EntityManager;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
