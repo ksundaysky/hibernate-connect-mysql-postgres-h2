@@ -1,6 +1,8 @@
 package pl.ksundaysky.workshops.model;
 
-import javax.persistence.*;
+import  javax.persistence.*;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -23,13 +25,39 @@ public class Author {
     @ManyToMany(mappedBy = "authors")
     private List<Book> books;
 
+    @Column(name = "date_of_birth")
+    @Temporal(TemporalType.DATE)
+    private Calendar dateOfBirth;
+
+    @Column(name = "date_of_addition")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateOfAddition;
+
     public Author() {
 
     }
 
-    public Author(String name, String surname) {
+    public Author(String name, String surname, Calendar dateOfBirth, Date dateOfAddition) {
         this.name = name;
         this.surname = surname;
+        this.dateOfBirth = dateOfBirth;
+        this.dateOfAddition = dateOfAddition;
+    }
+
+    public Date getDateOfAddition() {
+        return dateOfAddition;
+    }
+
+    public void setDateOfAddition(Date dateOfAddition) {
+        this.dateOfAddition = dateOfAddition;
+    }
+
+    public Calendar getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Calendar dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public void setId(Long id) {
