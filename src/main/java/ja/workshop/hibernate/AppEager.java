@@ -1,9 +1,9 @@
-package ja.workshops.hibernate;
+package ja.workshop.hibernate;
 
-import ja.workshops.hibernate.connectors.H2Connector;
-import ja.workshops.hibernate.model.Author;
-import ja.workshops.hibernate.model.Book;
-import ja.workshops.hibernate.model.Genre;
+import ja.workshop.hibernate.connectors.H2Connector;
+import ja.workshop.hibernate.model.Author;
+import ja.workshop.hibernate.model.Book;
+import ja.workshop.hibernate.model.Genre;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
