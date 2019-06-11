@@ -6,8 +6,6 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import java.io.File;
-import java.io.FileReader;
 import java.util.Properties;
 
 /**
@@ -35,11 +33,12 @@ public abstract class Connector implements ISession {
         Properties settings = loadConnectorSettings();
         Configuration configuration = new Configuration();
         configuration.setProperties(settings);
-        addEntites(configuration);
+        addEntities(configuration);
         return configuration;
     }
 
-    private void addEntites(Configuration configuration) {
+    //TODO: Uncomment after implement classes in model package:
+    private void addEntities(Configuration configuration) {
         /*configuration.addAnnotatedClass(Book.class);
         configuration.addAnnotatedClass(Author.class);
         configuration.addAnnotatedClass(Bookstore.class);
