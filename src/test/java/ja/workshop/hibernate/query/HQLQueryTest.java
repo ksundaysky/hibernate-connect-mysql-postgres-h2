@@ -7,6 +7,7 @@ import ja.workshop.hibernate.model.Author;
 import ja.workshop.hibernate.model.Book;
 import ja.workshop.hibernate.model.Genre;
 import org.hibernate.Session;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import ja.workshop.hibernate.crud.CrudMethods;
@@ -25,7 +26,7 @@ public class HQLQueryTest {
     private Session session;
     private IQuery iQuery;
 
-    @BeforeSuite
+    @BeforeClass
     public void before() throws SessionInitializationException {
         Author author = new Author("Kamil", "R");
         Set<Author> authors = Set.of(new Author("Jan", "Brzechwa"), new Author("OLA", "POD"));
@@ -51,5 +52,6 @@ public class HQLQueryTest {
     public void testListAllAuthorsWithSpecifiedName() {
         List<Author> list = iQuery.listAllAuthorsWithSpecifiedName(this.session,"Kamil");
         assertEquals( list.size(),1);
+        session.close();
     }
 }
