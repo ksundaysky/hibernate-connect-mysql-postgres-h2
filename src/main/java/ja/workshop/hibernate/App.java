@@ -1,10 +1,5 @@
 package ja.workshop.hibernate;
 
-import ja.workshop.hibernate.connectors.ConnectorManager;
-import ja.workshop.hibernate.connectors.EntityManager.EntityManagerConnectorManager;
-import ja.workshop.hibernate.connectors.EntityManager.H2Connector;
-import ja.workshop.hibernate.connectors.EntityManager.MysqlConnector;
-import ja.workshop.hibernate.connectors.EntityManager.PostgreSQLConnector;
 import ja.workshop.hibernate.connectors.SessionCloseException;
 import ja.workshop.hibernate.connectors.SessionInitializationException;
 import ja.workshop.hibernate.model.Author;
