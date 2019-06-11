@@ -6,6 +6,9 @@ import ja.workshop.hibernate.model.Author;
 import java.util.List;
 
 /**
+ * Documentation:
+ * Session : https://docs.jboss.org/hibernate/orm/5.4/javadocs/
+ * Tip: createQuery()
  * @author krzysztof.niedzielski
  */
 public class HQLQuery implements  IQuery {

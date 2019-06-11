@@ -40,13 +40,14 @@ public class CriteriaApiTest {
         iQuery= new CriteriaApi();
     }
 
-    @Test
+
+    @Test(priority = 0)
     public void testListAll() {
         List<Author> list = iQuery.listAll(this.session,Author.class);
         assertEquals( list.size(),3);
     }
 
-    @Test
+    @Test(priority = 1)
     public void testListAllAuthorsWithSpecifiedName() {
         List<Author> list = iQuery.listAllAuthorsWithSpecifiedName(this.session,"Kamil");
         assertEquals( list.size(),1);

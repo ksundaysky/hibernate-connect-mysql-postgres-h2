@@ -3,7 +3,7 @@
 Implement query methods in 4 classes:
 1. CriteriaApi
 2. HQLQuery
-3. JPQLQuery
+3. NamedQuery
 4. SQLQuery
 
 *More information in App class.*
@@ -16,3 +16,5 @@ Implement query methods in 4 classes:
 4. All test passed == you finished  :muscle:
 
 **Run tests sequentially!**
+
+***Now go to App class and read TODO section***

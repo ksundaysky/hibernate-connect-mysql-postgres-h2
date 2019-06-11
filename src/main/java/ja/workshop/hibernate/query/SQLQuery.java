@@ -6,14 +6,18 @@ import ja.workshop.hibernate.model.Author;
 import java.util.List;
 
 /**
+ * Documentation:
+ * Session : https://docs.jboss.org/hibernate/orm/5.4/javadocs/
+ * Tip: createSqlQuery()
+ * createSqlQuery returns List<Object[]> so we have to parse Object[] to Author object.
  * @author krzysztof.niedzielski
  */
-public class SQLQuery implements IQuery {
-    @Override
-    public <T> List<T> listAll(Session session, Class T) {
+public class SQLQuery {
+
+    public List<Author> listAll(Session session) {
         return null;
     }
-    @Override
+
     public List<Author> listAllAuthorsWithSpecifiedName(Session session, String name) {
         return null;
     }

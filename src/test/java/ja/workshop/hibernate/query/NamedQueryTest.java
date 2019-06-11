@@ -19,7 +19,7 @@ import static org.testng.Assert.*;
 /**
  * @author krzysztof.niedzielski
  */
-public class JPQLQueryTest {
+public class NamedQueryTest {
     private Session session;
     private IQuery iQuery;
 
@@ -35,17 +35,17 @@ public class JPQLQueryTest {
                 .updateRecord(book)
                 .commitAndClose();
         this.session = ConnectorManager.connect(new H2Connector("update")).getSession();
-        iQuery= new JPQLQuery();
+        iQuery= new NamedQuery();
     }
 
-    @Test
+    @Test(priority = 4)
     public void testListAll() {
         List<Author> list = iQuery.listAll(this.session,Author.class);
         System.out.println(list);
         assertEquals( list.size(),3);
     }
 
-    @Test
+    @Test(priority = 5)
     public void testListAllAuthorsWithSpecifiedName() {
         List<Author> list = iQuery.listAllAuthorsWithSpecifiedName(this.session,"Kamil");
         assertEquals( list.size(),1);

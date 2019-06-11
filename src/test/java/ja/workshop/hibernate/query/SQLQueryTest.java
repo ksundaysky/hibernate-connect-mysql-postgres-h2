@@ -21,7 +21,7 @@ import static org.testng.Assert.*;
  */
 public class SQLQueryTest {
     private Session session;
-    private IQuery iQuery;
+    private SQLQuery iQuery;
 
     @BeforeSuite
     public void before() throws SessionInitializationException {
@@ -38,14 +38,14 @@ public class SQLQueryTest {
         iQuery= new SQLQuery();
     }
 
-    @Test
+    @Test(priority = 6)
     public void testListAll() {
-        List<Author> list = iQuery.listAll(this.session,Author.class);
+        List<Author> list = iQuery.listAll(this.session);
         System.out.println(list);
         assertEquals( list.size(),3);
     }
 
-    @Test
+    @Test(priority = 7)
     public void testListAllAuthorsWithSpecifiedName() {
         List<Author> list = iQuery.listAllAuthorsWithSpecifiedName(this.session,"Kamil");
         assertEquals( list.size(),1);

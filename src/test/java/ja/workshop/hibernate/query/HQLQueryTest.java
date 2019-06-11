@@ -40,14 +40,14 @@ public class HQLQueryTest {
         iQuery= new HQLQuery();
     }
 
-    @Test
+    @Test(priority = 2)
     public void testListAll() {
         List<Author> list = iQuery.listAll(this.session,Author.class);
         System.out.println(list);
         assertEquals( list.size(),3);
     }
 
-    @Test
+    @Test(priority = 3)
     public void testListAllAuthorsWithSpecifiedName() {
         List<Author> list = iQuery.listAllAuthorsWithSpecifiedName(this.session,"Kamil");
         assertEquals( list.size(),1);
