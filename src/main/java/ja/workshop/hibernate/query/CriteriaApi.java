@@ -25,16 +25,9 @@ public class CriteriaApi implements IQuery {
 
         CriteriaQuery<T> criteriaQuery = criteriaBuilder.createQuery(T);
         Root<T> from = criteriaQuery.from(T);
-
-        System.out.println("Select all records");
-
         CriteriaQuery<T> select = criteriaQuery.select(from);
         TypedQuery<T> typedQuery = session.createQuery(select);
-        List<T> resultList = typedQuery.getResultList();
-
-
-
-        return resultList;
+        return typedQuery.getResultList();
     }
 
     @Override
@@ -45,12 +38,10 @@ public class CriteriaApi implements IQuery {
         Root<Author> from = criteriaQuery.from(Author.class);
 
         criteriaQuery.where(criteriaBuilder.equal(from.get("name"),name));
-        System.out.println("Select all records");
 
         CriteriaQuery<Author> select = criteriaQuery.select(from);
         TypedQuery<Author> typedQuery = session.createQuery(select);
-        List<Author> resultList = typedQuery.getResultList();
 
-        return resultList;
+        return typedQuery.getResultList();
     }
 }

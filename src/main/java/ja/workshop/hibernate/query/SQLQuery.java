@@ -11,13 +11,13 @@ import java.util.List;
  */
 public class SQLQuery implements  IQuery{
     public <T> List<T> listAll(Session session, Class T ){
-        List<T> list = session.createSQLQuery("select name, surnname from Author").getResultList();
+        List<T> list = session.createSQLQuery("select name, surname from Author").getResultList();
         return list;
     }
 
     @Override
     public List<Author> listAllAuthorsWithSpecifiedName(Session session, String name) {
-        String query = "select name, surnname from Author where name='"+name+"'";
+        String query = "select name, surname from Author where name='"+name+"'";
         List<Author> authors = new ArrayList<>();
         List<Object[]> list = session.createSQLQuery(query).getResultList();
         list.forEach(a -> {

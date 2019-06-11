@@ -19,7 +19,7 @@ import static org.testng.Assert.*;
 /**
  * @author krzysztof.niedzielski
  */
-public class JPQLQueryTest {
+public class NamedQueryTest {
     private Session session;
     private IQuery iQuery;
 
@@ -35,7 +35,7 @@ public class JPQLQueryTest {
                 .updateRecord(book)
                 .commitAndClose();
         this.session = ConnectorManager.connect(new H2Connector("update")).getSession();
-        iQuery= new JPQLQuery();
+        iQuery= new NamedQuery();
     }
 
     @Test
