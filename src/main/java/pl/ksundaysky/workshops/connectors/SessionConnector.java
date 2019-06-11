@@ -34,11 +34,11 @@ public abstract class SessionConnector implements ISession {
         Properties settings = loadConnectorSettings();
         Configuration configuration = new Configuration();
         configuration.setProperties(settings);
-        addEntites(configuration);
+        addEntities(configuration);
         return configuration;
     }
 
-    private void addEntites(Configuration configuration) {
+    private void addEntities(Configuration configuration) {
         configuration.addAnnotatedClass(Book.class);
         configuration.addAnnotatedClass(Author.class);
         configuration.addAnnotatedClass(Bookstore.class);
