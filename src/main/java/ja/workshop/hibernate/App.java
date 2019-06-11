@@ -3,7 +3,6 @@ import ja.workshop.hibernate.connectors.ConnectorManager;
 import ja.workshop.hibernate.connectors.H2Connector;
 import ja.workshop.hibernate.connectors.SessionConnector;
 import ja.workshop.hibernate.crud.CrudMethods;
-import pl.ksundaysky.workshops.model.*;
 
 /**
  * @author Kamil Rojek
