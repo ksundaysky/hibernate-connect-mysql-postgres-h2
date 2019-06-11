@@ -50,11 +50,10 @@ public class CollectionsTest {
         //Arrange
         SessionConnector sessionConnector = new H2Connector();
         Session session = sessionConnector.getSession();
-        Transaction transaction = session.beginTransaction();
+        session.beginTransaction();
 
         //Act
         session.persist(book);
-
         session.close();
 
         //Assert
