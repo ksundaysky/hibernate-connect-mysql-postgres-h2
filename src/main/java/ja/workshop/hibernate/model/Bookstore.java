@@ -13,7 +13,7 @@ public class Bookstore {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     @Column(name = "id", updatable = false, nullable = false)
-    private Long id;
+    private long id;
 
     @Column(name = "name", updatable = false, nullable = false)
     private String name;
