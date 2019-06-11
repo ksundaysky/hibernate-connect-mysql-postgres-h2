@@ -1,12 +1,14 @@
 package pl.ksundaysky.workshops;
 
-import org.hibernate.Session;
-import pl.ksundaysky.workshops.connectors.*;
-import pl.ksundaysky.workshops.crud.CrudHandler;
+import pl.ksundaysky.workshops.connectors.ConnectorManager;
+import pl.ksundaysky.workshops.connectors.H2Connector;
+import pl.ksundaysky.workshops.connectors.SessionConnector;
 import pl.ksundaysky.workshops.crud.CrudMethods;
-import pl.ksundaysky.workshops.model.*;
+import pl.ksundaysky.workshops.model.Author;
+import pl.ksundaysky.workshops.model.Book;
+import pl.ksundaysky.workshops.model.Genre;
 
-import java.util.*;
+import java.util.Set;
 
 /**
  * @author Kamil Rojek
