@@ -1,9 +1,8 @@
-package pl.ksundaysky.workshops;
+package ja.workshops.hibernate;
 
-import pl.ksundaysky.workshops.connectors.ConnectorManager;
-import pl.ksundaysky.workshops.connectors.H2Connector;
-import pl.ksundaysky.workshops.connectors.SessionConnector;
-import pl.ksundaysky.workshops.model.Author;
+import ja.workshops.hibernate.connectors.ConnectorManager;
+import ja.workshops.hibernate.connectors.SessionConnector;
+import ja.workshops.hibernate.model.Author;
 
 import java.util.Set;
 
@@ -11,8 +10,7 @@ import java.util.Set;
  * @author Kamil Rojek
  */
 public class App {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Author author = new Author("Kamil", "R");
         Set<Author> authors = Set.of(new Author("Jan", "Brzechwa"), new Author("OLA", "POD"));
 

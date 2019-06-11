@@ -1,11 +1,14 @@
-package pl.ksundaysky.workshops.connectors;
+package ja.workshops.hibernate.connectors;
 
+import ja.workshops.hibernate.model.Author;
+import ja.workshops.hibernate.model.Book;
+import ja.workshops.hibernate.model.Bookstore;
+import ja.workshops.hibernate.model.BookstoreBook;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-import pl.ksundaysky.workshops.model.*;
 
 import java.util.Properties;
 

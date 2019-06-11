@@ -1,8 +1,7 @@
-package pl.ksundaysky.workshops.model;
+package ja.workshops.hibernate.model;
 
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -26,7 +25,7 @@ public class Book {
     )
     private Set<Author> authors = new HashSet<>();
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy="book")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "book")
     private Set<BookstoreBook> bookstoreBooks = new HashSet<>();
 
     @Enumerated(EnumType.STRING)
@@ -35,6 +34,7 @@ public class Book {
     public Book() {
 
     }
+
     public Book(String title, Set<Author> authors, Genre genre) {
         this.title = title;
         this.authors = authors;
