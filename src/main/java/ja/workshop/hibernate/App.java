@@ -1,12 +1,19 @@
-package pl.ksundaysky.workshops;
+package ja.workshop.hibernate;
 
 
-import pl.ksundaysky.workshops.connectors.*;
-import pl.ksundaysky.workshops.crud.CrudMethods;
-import pl.ksundaysky.workshops.model.*;
+import ja.workshop.hibernate.connectors.ConnectorManager;
+import ja.workshop.hibernate.connectors.H2Connector;
+import ja.workshop.hibernate.connectors.SessionConnector;
+import ja.workshop.hibernate.crud.CrudMethods;
+import ja.workshop.hibernate.model.Author;
+import ja.workshop.hibernate.model.Book;
+import ja.workshop.hibernate.model.Genre;
 
 import java.time.LocalDate;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Kamil Rojek
@@ -15,9 +22,8 @@ public class App {
 
     public static void main(String[] args) {
 
-
         Calendar dateOfBirth1 = Calendar.getInstance();
-        dateOfBirth1.set(1976,Calendar.MARCH,11);
+        dateOfBirth1.set(1976, Calendar.MARCH, 11);
 
         Calendar dateOfBirth2 = new Calendar.Builder().setDate(1980, Calendar.APRIL, 4).build();
 
@@ -36,9 +42,6 @@ public class App {
                 .addRecord(authors)
                 .addRecord(bookWithDateOfIssue)
                 .commitAndClose();
-
-
-
     }
 
     private static ConnectorManager connect(SessionConnector connector) {
