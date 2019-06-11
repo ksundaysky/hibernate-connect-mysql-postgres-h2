@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ja.workshop.hibernate</groupId>
-    <artifactId>hibernate-connect-mysql-postgres- h2</artifactId>
+    <artifactId>hibernate-connect-mysql-postgres-h2</artifactId>
     <version>1.0</version>
     <build>
         <plugins>

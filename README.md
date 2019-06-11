@@ -1,4 +1,4 @@
-# Install and start database servers
+# Zainstaluj i odpal serwer bazy danych
 
 Zadanie:
 Stwórz generator wartości typu TABLE, użyj go dla encji Autor i Bookstore.
