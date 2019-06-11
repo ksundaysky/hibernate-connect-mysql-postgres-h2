@@ -10,11 +10,18 @@ import pl.ksundaysky.workshops.model.*;
 import java.util.Properties;
 
 /**
+ * Creates connections between Java and specific database.
+ *
  * @author Kamil Rojek
  */
 public abstract class SessionConnector implements ISession {
     private SessionFactory sessionFactory;
 
+    /**
+     * Opens session from SessionFactory.
+     *
+     * @return Session object.
+     */
     @Override
     public Session getSession() {
         return this.getSessionFactory().openSession();
@@ -38,6 +45,11 @@ public abstract class SessionConnector implements ISession {
         return configuration;
     }
 
+    /**
+     * Adds entities to project configuration.
+     *
+     * @param configuration
+     */
     private void addEntites(Configuration configuration) {
         configuration.addAnnotatedClass(Book.class);
         configuration.addAnnotatedClass(Author.class);
