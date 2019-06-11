@@ -38,14 +38,14 @@ public class NamedQueryTest {
         iQuery= new NamedQuery();
     }
 
-    @Test
+    @Test(priority = 4)
     public void testListAll() {
         List<Author> list = iQuery.listAll(this.session,Author.class);
         System.out.println(list);
         assertEquals( list.size(),3);
     }
 
-    @Test
+    @Test(priority = 5)
     public void testListAllAuthorsWithSpecifiedName() {
         List<Author> list = iQuery.listAllAuthorsWithSpecifiedName(this.session,"Kamil");
         assertEquals( list.size(),1);

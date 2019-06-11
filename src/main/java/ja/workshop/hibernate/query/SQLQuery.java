@@ -9,13 +9,12 @@ import java.util.List;
 /**
  * @author krzysztof.niedzielski
  */
-public class SQLQuery implements  IQuery{
-    public <T> List<T> listAll(Session session, Class T ){
-        List<T> list = session.createSQLQuery("select name, surname from Author").getResultList();
+public class SQLQuery {
+    public  List<Author> listAll(Session session ){
+        List<Author> list = session.createSQLQuery("select name, surname from Author").getResultList();
         return list;
     }
 
-    @Override
     public List<Author> listAllAuthorsWithSpecifiedName(Session session, String name) {
         String query = "select name, surname from Author where name='"+name+"'";
         List<Author> authors = new ArrayList<>();
