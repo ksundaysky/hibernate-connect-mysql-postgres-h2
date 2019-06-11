@@ -1,11 +1,10 @@
-package pl.ksundaysky.workshops;
+package ja.workshop.hibernate;
 
 
-import pl.ksundaysky.workshops.connectors.*;
-import pl.ksundaysky.workshops.crud.CrudMethods;
-import pl.ksundaysky.workshops.model.*;
+import ja.workshop.hibernate.connectors.ConnectorManager;
+import ja.workshop.hibernate.connectors.SessionConnector;
 
-import java.util.*;
+import java.util.Calendar;
 
 /**
  * @author Kamil Rojek
