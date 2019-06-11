@@ -10,7 +10,7 @@ import org.hibernate.Transaction;
  * This class shows hibernate object in each state.
  * TODO: create new class and use basic methods to obtain the same lifecycle.
  *
- * !Lifecycle will be useful to task with collections
+ * !Lifecycle will be useful in task with collections
  *
  * @author Ola Podorska
  */
