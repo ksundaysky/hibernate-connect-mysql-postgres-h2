@@ -15,6 +15,4 @@ Implement query methods in 4 classes:
 3. Run tests
 4. All test passed == you finished  :muscle:
 
-**Run tests sequentially!**
-
 ***Now go to App class and read TODO section***

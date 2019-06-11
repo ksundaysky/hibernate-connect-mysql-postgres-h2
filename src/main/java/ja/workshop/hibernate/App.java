@@ -33,7 +33,6 @@ public class App {
         // In this package there are several classes that need implementation.
         // Names of this classes are not random, they correspond to the way you should implement each class.
         // All test should pass.
-        // Run
 
         Session session = connect(new H2Connector("update")).getSession();
 
