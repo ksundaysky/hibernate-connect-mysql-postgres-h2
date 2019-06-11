@@ -1,7 +1,5 @@
 package ja.workshop.hibernate;
 
-import ja.workshop.hibernate.connectors.SessionCloseException;
-import ja.workshop.hibernate.connectors.SessionInitializationException;
 import ja.workshop.hibernate.model.Author;
 import ja.workshop.hibernate.model.Book;
 import ja.workshop.hibernate.model.Genre;
