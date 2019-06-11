@@ -23,7 +23,6 @@ public class App {
                 .updateRecord(author)
                 .updateRecord(authors)
                 .commitAndClose();
-
 */
 /*
         //II Stage - read record.
