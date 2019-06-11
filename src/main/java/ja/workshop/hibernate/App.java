@@ -38,12 +38,12 @@ public class App {
 //        connectorManagerH2.addRecords(book);
 
 
-        try {
+//        try {
 //            connectorManagerMySQL.commitAndClose();
 //            connectorManagerPostgreSQL.commitAndClose();
 //            connectorManagerH2.commitAndClose();
-        } catch (SessionInitializationException | SessionCloseException e) {
-            e.getMessage();
-        }
+//        } catch (SessionInitializationException | SessionCloseException e) {
+//            e.getMessage();
+//        }
     }
 }
