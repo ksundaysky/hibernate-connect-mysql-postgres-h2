@@ -21,7 +21,7 @@ it’s common to use the java.util or java.time instead.*
     then reapplied when you fetch it.
     * DATETIME is an 8-byte string of digits "yyyymmddhhmmss"
 
-#Task:
+##Task:
 
 1. Implement in Author his date of birth using java.util.Calendar (remember about using proper TemporalType).
 2. Next implement date of adding Author to the database using java.util.Date.
@@ -29,7 +29,7 @@ it’s common to use the java.util or java.time instead.*
 
 *Don't forget to configure your Connector*
 
-## Documentation 
+### Documentation 
 
 Checkout documentation:
 
@@ -40,7 +40,7 @@ Checkout documentation:
 * [java.time.ZoneOffset](https://docs.oracle.com/javase/8/docs/api/java/time/ZoneOffset.html)
 * [java.time.OffsetTime](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetTime.html)
 
-## Tips 
+### Tips 
 
 If you install db for first time (or forget how to do it):
 
