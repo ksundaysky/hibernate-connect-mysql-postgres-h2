@@ -1,4 +1,4 @@
-package pl.ksundaysky.workshops.connectors;
+package ja.workshop.hibernate.connectors;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -34,11 +34,11 @@ public abstract class SessionConnector implements ISession {
         Properties settings = loadConnectorSettings();
         Configuration configuration = new Configuration();
         configuration.setProperties(settings);
-        addEntites(configuration);
+        addEntities(configuration);
         return configuration;
     }
 
-    private void addEntites(Configuration configuration) {
+    private void addEntities(Configuration configuration) {
         configuration.addAnnotatedClass(YOUR CLASSES);
     }
 
