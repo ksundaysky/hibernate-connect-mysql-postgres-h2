@@ -1,9 +1,13 @@
-package pl.ksundaysky.workshops;
+package ja.workshop.hibernate;
 
 
-import pl.ksundaysky.workshops.connectors.*;
-import pl.ksundaysky.workshops.crud.CrudMethods;
-import pl.ksundaysky.workshops.model.*;
+import ja.workshop.hibernate.connectors.ConnectorManager;
+import ja.workshop.hibernate.connectors.H2Connector;
+import ja.workshop.hibernate.connectors.SessionConnector;
+import ja.workshop.hibernate.model.Author;
+import ja.workshop.hibernate.model.Book;
+import ja.workshop.hibernate.model.Genre;
+import ja.workshop.hibernate.crud.CrudMethods;
 
 import java.time.LocalDate;
 import java.util.*;

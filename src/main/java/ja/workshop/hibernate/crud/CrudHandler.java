@@ -1,8 +1,8 @@
-package pl.ksundaysky.workshops.crud;
+package ja.workshop.hibernate.crud;
 
 import org.hibernate.Session;
-import pl.ksundaysky.workshops.connectors.ConnectorManager;
-import pl.ksundaysky.workshops.connectors.SessionInitializationException;
+import ja.workshop.hibernate.connectors.ConnectorManager;
+import ja.workshop.hibernate.connectors.SessionInitializationException;
 
 import java.io.Serializable;
 import java.util.ArrayList;
