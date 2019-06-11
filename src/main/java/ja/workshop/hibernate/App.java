@@ -1,12 +1,10 @@
-package pl.ksundaysky.workshops;
+package ja.workshop.hibernate;
 
-import pl.ksundaysky.workshops.connectors.ConnectorManager;
-import pl.ksundaysky.workshops.connectors.H2Connector;
-import pl.ksundaysky.workshops.connectors.SessionConnector;
-import pl.ksundaysky.workshops.crud.CrudMethods;
-import pl.ksundaysky.workshops.model.Author;
-import pl.ksundaysky.workshops.model.Book;
-import pl.ksundaysky.workshops.model.Genre;
+import ja.workshop.hibernate.connectors.ConnectorManager;
+import ja.workshop.hibernate.connectors.H2Connector;
+import ja.workshop.hibernate.connectors.SessionConnector;
+import ja.workshop.hibernate.crud.CrudMethods;
+import ja.workshop.hibernate.model.Author;
 
 import java.util.Set;
 
@@ -41,7 +39,7 @@ public class App {
                 .deleteRecord(authorKamil);
     }
 
-    private static ConnectorManager connect(SessionConnector connector) {
+    private static ConnectorManager<?> connect(SessionConnector connector) {
         return ConnectorManager.connect(connector);
     }
 }

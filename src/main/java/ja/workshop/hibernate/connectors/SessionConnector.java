@@ -1,11 +1,14 @@
-package pl.ksundaysky.workshops.connectors;
+package ja.workshop.hibernate.connectors;
 
+import ja.workshop.hibernate.model.Author;
+import ja.workshop.hibernate.model.Book;
+import ja.workshop.hibernate.model.Bookstore;
+import ja.workshop.hibernate.model.BookstoreBook;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-import pl.ksundaysky.workshops.model.*;
 
 import java.util.Properties;
 
@@ -41,7 +44,7 @@ public abstract class SessionConnector implements ISession {
         Properties settings = loadConnectorSettings();
         Configuration configuration = new Configuration();
         configuration.setProperties(settings);
-        addEntites(configuration);
+        addEntities(configuration);
         return configuration;
     }
 
@@ -50,7 +53,7 @@ public abstract class SessionConnector implements ISession {
      *
      * @param configuration
      */
-    private void addEntites(Configuration configuration) {
+    private void addEntities(Configuration configuration) {
         configuration.addAnnotatedClass(Book.class);
         configuration.addAnnotatedClass(Author.class);
         configuration.addAnnotatedClass(Bookstore.class);

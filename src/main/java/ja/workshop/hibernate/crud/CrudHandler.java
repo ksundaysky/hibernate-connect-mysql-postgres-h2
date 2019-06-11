@@ -1,8 +1,8 @@
-package pl.ksundaysky.workshops.crud;
+package ja.workshop.hibernate.crud;
 
+import ja.workshop.hibernate.connectors.ConnectorManager;
+import ja.workshop.hibernate.connectors.SessionInitializationException;
 import org.hibernate.Session;
-import pl.ksundaysky.workshops.connectors.ConnectorManager;
-import pl.ksundaysky.workshops.connectors.SessionInitializationException;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Handles CRUD methods with automatic session initialization,
  * transaction opening, entities committing and session closing.
- *
+ * <p>
  * It provides lazily persisting/saving collections of entities
  * (collecting entities in {@code List<Object> recordsToAdd}
  * and {@code List<Object> recordsToUpdate}).
@@ -36,7 +36,7 @@ public class CrudHandler {
     /**
      * Initializes new CrudHandler class.
      *
-     * @param crudMethods - API of basic crud methods (create, read, update, delete).
+     * @param crudMethods      - API of basic crud methods (create, read, update, delete).
      * @param connectorManager - manager of connection between java and database
      * @return CrudHandler
      */
@@ -61,7 +61,7 @@ public class CrudHandler {
      * Adds record to {@code List<Object> recordsToAdd}
      *
      * @param record - single record
-     * @param <R> - record type
+     * @param <R>    - record type
      * @return - CrudHandler
      */
     public <R> CrudHandler addRecord(R record) {
@@ -86,7 +86,7 @@ public class CrudHandler {
      * Adds record to {@code List<Object> recordsToUpdate}
      *
      * @param record - single record
-     * @param <R> - record type
+     * @param <R>    - record type
      * @return - CrudHandler
      */
     public <R> CrudHandler updateRecord(R record) {
@@ -98,8 +98,8 @@ public class CrudHandler {
      * Reads record from data base.
      *
      * @param clazz - class represents record in database
-     * @param id - id of record
-     * @param <T> - type of identity
+     * @param id    - id of record
+     * @param <T>   - type of identity
      * @return - record as an object
      */
     public <T extends Serializable> Object readRecord(Class<?> clazz, T id) {
@@ -116,7 +116,7 @@ public class CrudHandler {
      * Deletes record from database.
      *
      * @param record - record to delete
-     * @param <R> - type of record
+     * @param <R>    - type of record
      */
     public <R> void deleteRecord(R record) {
         try (Session session = connectorManager.getSession()) {

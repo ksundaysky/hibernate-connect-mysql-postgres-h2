@@ -1,4 +1,4 @@
-package pl.ksundaysky.workshops.crud;
+package ja.workshop.hibernate.crud;
 
 import org.hibernate.MappingException;
 import org.hibernate.Session;
@@ -34,7 +34,7 @@ public class CrudMethods implements ICrudMethods {
         try {
             session.persist(record);
         } catch (MappingException e) {
-            System.err.println("Adding record failed -> " + record.toString());
+            System.err.println("Adding record failed -> " + record);
         }
     }
 
@@ -62,7 +62,7 @@ public class CrudMethods implements ICrudMethods {
         try {
             session.saveOrUpdate(record);
         } catch (MappingException e) {
-            System.err.println("Updating record failed -> " + record.toString());
+            System.err.println("Updating record failed -> " + record);
         }
     }
 

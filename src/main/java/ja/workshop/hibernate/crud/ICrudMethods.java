@@ -1,4 +1,4 @@
-package pl.ksundaysky.workshops.crud;
+package ja.workshop.hibernate.crud;
 
 import org.hibernate.Session;
 
@@ -12,7 +12,7 @@ public interface ICrudMethods {
 
     <R> void create(R record);
 
-    <T extends Serializable> Object read(Class<?> c, T Id);
+    <T extends Serializable> Object read(Class<?> clazz, T Id);
 
     <R> void update(R record);
 

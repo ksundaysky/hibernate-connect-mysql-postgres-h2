@@ -1,4 +1,4 @@
-package pl.ksundaysky.workshops.model;
+package ja.workshop.hibernate.model;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,7 +12,7 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
-    private Long id;
+    private long id;
 
     @Column(name = "name", nullable = false)
     private String name;
