@@ -1,8 +1,8 @@
-package ja.workshops.hibernate.crud;
+package ja.workshop.hibernate.crud;
 
+import ja.workshop.hibernate.connectors.ConnectorManager;
+import ja.workshop.hibernate.connectors.SessionInitializationException;
 import org.hibernate.Session;
-import ja.workshops.hibernate.connectors.ConnectorManager;
-import ja.workshops.hibernate.connectors.SessionInitializationException;
 
 import java.io.Serializable;
 import java.util.ArrayList;

@@ -1,12 +1,10 @@
-package ja.workshops.hibernate;
+package ja.workshop.hibernate;
 
-import ja.workshops.hibernate.connectors.ConnectorManager;
-import ja.workshops.hibernate.connectors.H2Connector;
-import ja.workshops.hibernate.connectors.SessionConnector;
-import ja.workshops.hibernate.crud.CrudMethods;
-import ja.workshops.hibernate.model.Author;
-import ja.workshops.hibernate.model.Book;
-import ja.workshops.hibernate.model.Genre;
+import ja.workshop.hibernate.connectors.ConnectorManager;
+import ja.workshop.hibernate.connectors.H2Connector;
+import ja.workshop.hibernate.connectors.SessionConnector;
+import ja.workshop.hibernate.crud.CrudMethods;
+import ja.workshop.hibernate.model.Author;
 
 import java.util.Set;
 

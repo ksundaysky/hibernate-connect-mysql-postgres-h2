@@ -1,4 +1,4 @@
-package ja.workshops.hibernate.crud;
+package ja.workshop.hibernate.crud;
 
 import org.hibernate.Session;
 
