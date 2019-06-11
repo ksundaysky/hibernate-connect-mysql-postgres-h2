@@ -1,1 +1,1 @@
-*Tests run sequentially.*
+*Run tests sequentially!*
