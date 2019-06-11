@@ -19,7 +19,10 @@ public class Bookstore {
     private String name;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy="bookstore")
-    private Set<BookstoreBook> bookstoreBooks = new HashSet<BookstoreBook>();
+    private Set<BookstoreBook> bookstoreBooks = new HashSet<>();
+
+    public Bookstore() {
+    }
 
     public Bookstore(String name) {
         this.name = name;
