@@ -2,8 +2,6 @@ package ja.workshop.hibernate.connectors;
 
 import ja.workshop.hibernate.model.Author;
 import ja.workshop.hibernate.model.Book;
-import ja.workshop.hibernate.model.Person;
-import ja.workshop.hibernate.model.Umowa;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -36,8 +34,6 @@ public class H2Connector implements Connector {
                 settings.put(Environment.HBM2DDL_AUTO, "create-drop");
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
                 configuration.setProperties(settings);
-                configuration.addAnnotatedClass(Person.class);
-                configuration.addAnnotatedClass(Umowa.class);
                 configuration.addAnnotatedClass(Book.class);
                 configuration.addAnnotatedClass(Author.class);
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()

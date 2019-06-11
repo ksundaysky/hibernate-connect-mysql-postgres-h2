@@ -10,7 +10,7 @@ public class Bookstore {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Column(name = "name", nullable = false)
     private String nameOfBookstore;
