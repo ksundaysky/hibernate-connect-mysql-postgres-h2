@@ -10,37 +10,43 @@ import pl.ksundaysky.workshops.model.*;
 import java.util.Properties;
 
 /**
+ * Creates connections between Java and specific database.
+ *
  * @author Kamil Rojek
  */
 public abstract class SessionConnector implements ISession {
     private SessionFactory sessionFactory;
-
+    /**
+     * Opens session from SessionFactory.
+     *
+     * @return Session object.
+     */
     @Override
     public Session getSession() {
         return this.getSessionFactory().openSession();
     }
-
     private SessionFactory getSessionFactory() {
         if (sessionFactory != null)
             return sessionFactory;
-
         Configuration configuration = createConfiguration();
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties()).build();
         return sessionFactory = configuration.buildSessionFactory(serviceRegistry);
     }
-
     private Configuration createConfiguration() {
         Properties settings = loadConnectorSettings();
         Configuration configuration = new Configuration();
         configuration.setProperties(settings);
-        addEntites(configuration);
+        addEntities(configuration);
         return configuration;
     }
-
-    private void addEntites(Configuration configuration) {
+    /**
+     * Adds entities to project configuration.
+     *
+     * @param configuration
+     */
+    private void addEntities(Configuration configuration) {
         configuration.addAnnotatedClass(YOUR CLASSES);
     }
-
     abstract Properties loadConnectorSettings();
 }
