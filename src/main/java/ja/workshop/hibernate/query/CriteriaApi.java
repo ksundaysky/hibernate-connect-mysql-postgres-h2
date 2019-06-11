@@ -30,11 +30,11 @@ public class CriteriaApi implements IQuery {
 
         CriteriaQuery<T> select = criteriaQuery.select(from);
         TypedQuery<T> typedQuery = session.createQuery(select);
-        List<T> resultlist = typedQuery.getResultList();
+        List<T> resultList = typedQuery.getResultList();
 
 
 
-        return resultlist;
+        return resultList;
     }
 
     @Override
@@ -49,8 +49,8 @@ public class CriteriaApi implements IQuery {
 
         CriteriaQuery<Author> select = criteriaQuery.select(from);
         TypedQuery<Author> typedQuery = session.createQuery(select);
-        List<Author> resultlist = typedQuery.getResultList();
+        List<Author> resultList = typedQuery.getResultList();
 
-        return resultlist;
+        return resultList;
     }
 }

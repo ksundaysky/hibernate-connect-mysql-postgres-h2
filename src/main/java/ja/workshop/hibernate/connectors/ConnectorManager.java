@@ -47,7 +47,7 @@ public class ConnectorManager<T extends ISession> implements AutoCloseable {
         close();
     }
 
-    public void initializeSession() throws SessionInitializationException {
+    private void initializeSession() throws SessionInitializationException {
         try {
             session = (session == null || !session.isConnected())  ? connector.getSession() : session;
             transaction = (transaction == null || !transaction.isActive()) ? session.beginTransaction() : transaction;

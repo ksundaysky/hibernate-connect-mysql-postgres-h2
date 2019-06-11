@@ -9,7 +9,7 @@ import java.util.Properties;
  */
 public class H2Connector extends SessionConnector {
 
-    String ddlAuto = "create";
+    private String ddlAuto = "create";
 
     public H2Connector(String ddlAuto) {
         this.ddlAuto = ddlAuto;

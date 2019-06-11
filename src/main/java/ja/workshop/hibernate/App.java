@@ -28,12 +28,6 @@ public class App {
                 .updateRecord(book)
                 .commitAndClose();
 
-        //TODO : You should implement methods listAll and listAllAuthorsWithSpecifiedName in all classes in package ...query
-        // You can achieve this in several ways
-        // In this package there are several classes that need implementation
-        // Names of this classes are not random, they correspond to the way you should implement each class.
-        // All test should pass
-
         Session session = connect(new H2Connector("update")).getSession();
 
     }
