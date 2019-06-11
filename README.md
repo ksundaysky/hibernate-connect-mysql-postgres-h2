@@ -1,4 +1,4 @@
-#Install and start database servers
+# Install and start database servers
 
 You should install 3 different databases:
 
@@ -12,7 +12,7 @@ You should install 3 different databases:
 4. Create database and name it: DB
 5. Change in Connector classes {database}, {password}, {username}
 
-##Documentation
+## Documentation
 
 Checkout documentation:
 
@@ -20,7 +20,7 @@ Checkout documentation:
 * [PostgreSQL](https://www.postgresql.org/docs/11/index.html)
 * [H2](https://www.h2database.com/html/installation.html)
 
-##Tips
+## Tips
 
 If you install db for first time (or forget how to do it):
 
