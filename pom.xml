@@ -6,7 +6,7 @@
 
     <groupId>ja.workshop.hibernate</groupId>
     <artifactId>hibernate-connect-mysql-postgres-h2</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -41,7 +41,7 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>1.4.190</version>
-            <!--We use runtime scope because H2 we use database in functional code-->
+            <!--We use runtime scope because we want use H2 database in functional code-->
             <scope>runtime</scope>
         </dependency>
     </dependencies>
