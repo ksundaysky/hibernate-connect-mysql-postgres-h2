@@ -1,4 +1,4 @@
-package ja.workshop.hibernate.parts.model;
+package ja.workshops.hibernate.parts.model;
 
 import javax.persistence.*;
 import java.util.HashSet;

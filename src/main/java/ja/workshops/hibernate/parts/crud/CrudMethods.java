@@ -1,4 +1,4 @@
-package ja.workshop.hibernate.parts.crud;
+package ja.workshops.hibernate.parts.crud;
 
 import org.hibernate.MappingException;
 import org.hibernate.Session;
