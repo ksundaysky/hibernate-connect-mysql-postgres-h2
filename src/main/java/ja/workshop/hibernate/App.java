@@ -9,26 +9,37 @@ import ja.workshop.hibernate.model.Book;
 import ja.workshop.hibernate.model.Genre;
 import ja.workshop.hibernate.crud.CrudMethods;
 
-import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.time.*;
+import java.util.*;
 
 /**
+ * Picture with transformation java times to sql times in README.
+ *
  * @author Kamil Rojek
  */
 public class App {
 
     public static void main(String[] args) {
 
+        /*To get the specific date with JDBC DATE Type before java.time you could use
         Calendar dateOfBirth1 = Calendar.getInstance();
         dateOfBirth1.set(1976, Calendar.MARCH, 11);
 
-        Calendar dateOfBirth2 = new Calendar.Builder().setDate(1980, Calendar.APRIL, 4).build();
+        or
 
-        Author authorWithDateOfBirth1 = new Author("Anna", "Wajda", dateOfBirth1, new Date());
-        Author authorWithDateOfBirth2 = new Author("Stanisław", "Kowalski", dateOfBirth2, new Date());
+        Calendar dateOfBirth2 = new Calendar.Builder().setDate(1980, Calendar.APRIL, 4).build();
+         */
+
+        LocalDate dateOfBirth1 = LocalDate.of(1976, 3, 11);
+
+        LocalDate dateOfBirth2 = LocalDate.of(1980, 4, 4);
+
+        /*To get current time with JDBC TIMESTAMP Type before java.time you could use java.util.Date new Date() or
+        java.util.Calendar Calendar.getInstance().getTime()
+         */
+        Author authorWithDateOfBirth1 = new Author("Anna", "Wajda", dateOfBirth1, OffsetDateTime.now(ZoneId.systemDefault()));
+        Author authorWithDateOfBirth2 = new Author("Stanisław", "Kowalski", dateOfBirth2, OffsetDateTime.now(ZoneId.systemDefault()));
+
 
         Set<Author> authors = new HashSet<>();
         authors.add(authorWithDateOfBirth1);

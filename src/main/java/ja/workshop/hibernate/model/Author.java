@@ -1,8 +1,8 @@
 package ja.workshop.hibernate.model;
 
 import javax.persistence.*;
-import java.util.Calendar;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 /**
@@ -19,44 +19,42 @@ public class Author {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "surnname", nullable = false)
+    @Column(name = "surname", nullable = false)
     private String surname;
 
     @ManyToMany(mappedBy = "authors")
     private List<Book> books;
 
     @Column(name = "date_of_birth")
-    @Temporal(TemporalType.DATE)
-    private Calendar dateOfBirth;
+    private LocalDate dateOfBirth;
 
     @Column(name = "date_of_addition")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateOfAddition;
+    private OffsetDateTime dateOfAddition;
 
     public Author() {
 
     }
 
-    public Author(String name, String surname, Calendar dateOfBirth, Date dateOfAddition) {
+    public Author(String name, String surname, LocalDate dateOfBirth, OffsetDateTime dateOfAddition) {
         this.name = name;
         this.surname = surname;
         this.dateOfBirth = dateOfBirth;
         this.dateOfAddition = dateOfAddition;
     }
 
-    public Date getDateOfAddition() {
+    public OffsetDateTime getDateOfAddition() {
         return dateOfAddition;
     }
 
-    public void setDateOfAddition(Date dateOfAddition) {
+    public void setDateOfAddition(OffsetDateTime dateOfAddition) {
         this.dateOfAddition = dateOfAddition;
     }
 
-    public Calendar getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Calendar dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
