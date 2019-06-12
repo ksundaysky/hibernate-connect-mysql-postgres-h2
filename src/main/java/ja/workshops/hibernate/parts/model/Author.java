@@ -7,6 +7,10 @@ import java.util.List;
  * @author Bartosz Kupajski
  */
 @Entity
+@org.hibernate.annotations.NamedQueries({
+        @org.hibernate.annotations.NamedQuery(name="SelectAllAuthors",query="from Author"),
+        @org.hibernate.annotations.NamedQuery(name="SelectAuthorsWhereName", query = "from Author where name = :authorName")
+})
 public class Author {
 
     @Id
@@ -17,7 +21,7 @@ public class Author {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "surnname", nullable = false)
+    @Column(name = "surname", nullable = false)
     private String surname;
 
     @ManyToMany(mappedBy = "authors")

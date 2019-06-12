@@ -9,17 +9,18 @@ import java.util.List;
  * Documentation:
  * Session : https://docs.jboss.org/hibernate/orm/5.4/javadocs/
  * Tip: createQuery()
+ *
  * @author krzysztof.niedzielski
  */
-public class HQLQuery implements  IQuery {
+public class HQLQuery implements IQuery {
 
-    @Override
-    public <T> List<T> listAll(Session session, Class T ){
-       return null;
+
+    public <T> List<T> listAll(Session session, Class T) {
+        return session.createQuery("FROM " + T.getName()).list();
     }
 
     @Override
     public List<Author> listAllAuthorsWithSpecifiedName(Session session, String name) {
-        return null;
+        return (List<Author>) session.createQuery("FROM Author WHERE name='" + name + "'").list();
     }
 }
