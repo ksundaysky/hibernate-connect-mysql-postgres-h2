@@ -1,5 +1,5 @@
 
-# @Version and Optimistic Locking
+= @Version and Optimistic Locking
 
 Optimistic locking is a mechanism that prevents an application from being affected by the "lost update" phenomenon in a concurrent environment while allowing some high degree of concurrency at the same time. This is achieved without actually resorting to any locks: Optimistic locking relies on checks that are made against the existing data on the data store by transactions during update time.
 
